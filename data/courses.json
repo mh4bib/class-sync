@@ -1,0 +1,292 @@
+{
+  "courses": [
+    {
+      "id": 1111,
+      "courseCode": "CSE1101",
+      "courseTitle": "Introduction to Computer Science",
+      "creditHours": 3
+    },
+    {
+      "id": 1112,
+      "courseCode": "CSE1102",
+      "courseTitle": "Programming Fundamentals",
+      "creditHours": 3
+    },
+    {
+      "id": 1113,
+      "courseCode": "CSE1103",
+      "courseTitle": "Computer Fundamentals",
+      "creditHours": 3
+    },
+    {
+      "id": 1114,
+      "courseCode": "CSE1104",
+      "courseTitle": "Digital Logic Design",
+      "creditHours": 3
+    },
+    {
+      "id": 1115,
+      "courseCode": "CSE1105",
+      "courseTitle": "Structured Programming",
+      "creditHours": 3
+    },
+    {
+      "id": 1116,
+      "courseCode": "CSE1106",
+      "courseTitle": "Introduction to Web Development",
+      "creditHours": 3
+    },
+    {
+      "id": 1121,
+      "courseCode": "CSE1201",
+      "courseTitle": "Object Oriented Programming",
+      "creditHours": 3
+    },
+    {
+      "id": 1122,
+      "courseCode": "CSE1202",
+      "courseTitle": "Discrete Mathematics",
+      "creditHours": 3
+    },
+    {
+      "id": 1123,
+      "courseCode": "CSE1203",
+      "courseTitle": "Basic Electronics",
+      "creditHours": 3
+    },
+    {
+      "id": 1124,
+      "courseCode": "CSE1204",
+      "courseTitle": "Data Communication",
+      "creditHours": 3
+    },
+    {
+      "id": 1125,
+      "courseCode": "CSE1205",
+      "courseTitle": "Advanced Programming",
+      "creditHours": 3
+    },
+    {
+      "id": 1126,
+      "courseCode": "CSE1206",
+      "courseTitle": "Computer Architecture",
+      "creditHours": 3
+    },
+    {
+      "id": 2111,
+      "courseCode": "CSE2101",
+      "courseTitle": "Data Structures",
+      "creditHours": 3
+    },
+    {
+      "id": 2112,
+      "courseCode": "CSE2102",
+      "courseTitle": "Algorithms",
+      "creditHours": 3
+    },
+    {
+      "id": 2113,
+      "courseCode": "CSE2103",
+      "courseTitle": "Theory of Computation",
+      "creditHours": 3
+    },
+    {
+      "id": 2114,
+      "courseCode": "CSE2104",
+      "courseTitle": "Operating Systems",
+      "creditHours": 3
+    },
+    {
+      "id": 2115,
+      "courseCode": "CSE2105",
+      "courseTitle": "System Analysis and Design",
+      "creditHours": 3
+    },
+    {
+      "id": 2116,
+      "courseCode": "CSE2106",
+      "courseTitle": "Computer Networks",
+      "creditHours": 3
+    },
+    {
+      "id": 2121,
+      "courseCode": "CSE2201",
+      "courseTitle": "Database Management Systems",
+      "creditHours": 3
+    },
+    {
+      "id": 2122,
+      "courseCode": "CSE2202",
+      "courseTitle": "Software Engineering",
+      "creditHours": 3
+    },
+    {
+      "id": 2123,
+      "courseCode": "CSE2203",
+      "courseTitle": "Numerical Methods",
+      "creditHours": 3
+    },
+    {
+      "id": 2124,
+      "courseCode": "CSE2204",
+      "courseTitle": "Computer Graphics",
+      "creditHours": 3
+    },
+    {
+      "id": 2125,
+      "courseCode": "CSE2205",
+      "courseTitle": "Web Technologies",
+      "creditHours": 3
+    },
+    {
+      "id": 2126,
+      "courseCode": "CSE2206",
+      "courseTitle": "Network Security",
+      "creditHours": 3
+    },
+    {
+      "id": 3111,
+      "courseCode": "CSE3101",
+      "courseTitle": "Artificial Intelligence",
+      "creditHours": 3
+    },
+    {
+      "id": 3112,
+      "courseCode": "CSE3102",
+      "courseTitle": "Machine Learning",
+      "creditHours": 3
+    },
+    {
+      "id": 3113,
+      "courseCode": "CSE3103",
+      "courseTitle": "Compiler Design",
+      "creditHours": 3
+    },
+    {
+      "id": 3114,
+      "courseCode": "CSE3104",
+      "courseTitle": "Distributed Systems",
+      "creditHours": 3
+    },
+    {
+      "id": 3115,
+      "courseCode": "CSE3105",
+      "courseTitle": "Mobile Application Development",
+      "creditHours": 3
+    },
+    {
+      "id": 3116,
+      "courseCode": "CSE3106",
+      "courseTitle": "Cloud Computing",
+      "creditHours": 3
+    },
+    {
+      "id": 3121,
+      "courseCode": "CSE3201",
+      "courseTitle": "Deep Learning",
+      "creditHours": 3
+    },
+    {
+      "id": 3122,
+      "courseCode": "CSE3202",
+      "courseTitle": "Natural Language Processing",
+      "creditHours": 3
+    },
+    {
+      "id": 3123,
+      "courseCode": "CSE3203",
+      "courseTitle": "Computer Vision",
+      "creditHours": 3
+    },
+    {
+      "id": 3124,
+      "courseCode": "CSE3204",
+      "courseTitle": "Robotics",
+      "creditHours": 3
+    },
+    {
+      "id": 3125,
+      "courseCode": "CSE3205",
+      "courseTitle": "Internet of Things",
+      "creditHours": 3
+    },
+    {
+      "id": 3126,
+      "courseCode": "CSE3206",
+      "courseTitle": "Blockchain Technology",
+      "creditHours": 3
+    },
+    {
+      "id": 4111,
+      "courseCode": "CSE4101",
+      "courseTitle": "Big Data Analytics",
+      "creditHours": 3
+    },
+    {
+      "id": 4112,
+      "courseCode": "CSE4102",
+      "courseTitle": "Quantum Computing",
+      "creditHours": 3
+    },
+    {
+      "id": 4113,
+      "courseCode": "CSE4103",
+      "courseTitle": "Cybersecurity",
+      "creditHours": 3
+    },
+    {
+      "id": 4114,
+      "courseCode": "CSE4104",
+      "courseTitle": "Data Mining",
+      "creditHours": 3
+    },
+    {
+      "id": 4115,
+      "courseCode": "CSE4105",
+      "courseTitle": "Expert Systems",
+      "creditHours": 3
+    },
+    {
+      "id": 4116,
+      "courseCode": "CSE4106",
+      "courseTitle": "Pattern Recognition",
+      "creditHours": 3
+    },
+    {
+      "id": 4121,
+      "courseCode": "CSE4201",
+      "courseTitle": "Project Management",
+      "creditHours": 3
+    },
+    {
+      "id": 4122,
+      "courseCode": "CSE4202",
+      "courseTitle": "Professional Ethics",
+      "creditHours": 3
+    },
+    {
+      "id": 4123,
+      "courseCode": "CSE4203",
+      "courseTitle": "Software Testing",
+      "creditHours": 3
+    },
+    {
+      "id": 4124,
+      "courseCode": "CSE4204",
+      "courseTitle": "Software Quality Assurance",
+      "creditHours": 3
+    },
+    {
+      "id": 4125,
+      "courseCode": "CSE4205",
+      "courseTitle": "Final Year Project I",
+      "creditHours": 3
+    },
+    {
+      "id": 4126,
+      "courseCode": "CSE4206",
+      "courseTitle": "Final Year Project II",
+      "creditHours": 3
+    }
+  ]
+}

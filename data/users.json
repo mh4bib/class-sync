@@ -1,0 +1,112 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "admin@test.com",
+      "password": "admin123",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "email": "teacher@test.com",
+      "password": "teacher123",
+      "role": "teacher"
+    },
+    {
+      "id": "3",
+      "email": "student@test.com",
+      "password": "student123",
+      "role": "student"
+    },
+    {
+      "id": "4",
+      "email": "admin2@test.com",
+      "password": "admin456",
+      "role": "admin"
+    },
+    {
+      "id": "5",
+      "email": "admin3@test.com",
+      "password": "admin789",
+      "role": "admin"
+    },
+    {
+      "id": "6",
+      "email": "teacher2@test.com",
+      "password": "teacher456",
+      "role": "teacher"
+    },
+    {
+      "id": "7",
+      "email": "teacher3@test.com",
+      "password": "teacher789",
+      "role": "teacher"
+    },
+    {
+      "id": "8",
+      "email": "teacher4@test.com",
+      "password": "teacher101",
+      "role": "teacher"
+    },
+    {
+      "id": "9",
+      "email": "teacher5@test.com",
+      "password": "teacher102",
+      "role": "teacher"
+    },
+    {
+      "id": "10",
+      "email": "student2@test.com",
+      "password": "student456",
+      "role": "student"
+    },
+    {
+      "id": "11",
+      "email": "student3@test.com",
+      "password": "student789",
+      "role": "student"
+    },
+    {
+      "id": "12",
+      "email": "student4@test.com",
+      "password": "student101",
+      "role": "student"
+    },
+    {
+      "id": "13",
+      "email": "student5@test.com",
+      "password": "student102",
+      "role": "student"
+    },
+    {
+      "id": "14",
+      "email": "student6@test.com",
+      "password": "student103",
+      "role": "student"
+    },
+    {
+      "id": "15",
+      "email": "student7@test.com",
+      "password": "student104",
+      "role": "student"
+    },
+    {
+      "id": "16",
+      "email": "student8@test.com",
+      "password": "student105",
+      "role": "student"
+    },
+    {
+      "id": "17",
+      "email": "student9@test.com",
+      "password": "student106",
+      "role": "student"
+    },
+    {
+      "id": "18",
+      "email": "student10@test.com",
+      "password": "student107",
+      "role": "student"
+    }
+  ]
+}

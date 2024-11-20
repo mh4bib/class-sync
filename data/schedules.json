@@ -1,0 +1,214 @@
+{
+  "schedules": [
+    {
+      "id": "1",
+      "courseId": "1111",
+      "teacherId": "6",
+      "dayOfWeek": "Monday",
+      "startTime": "08:30",
+      "endTime": "10:00",
+      "venue": "Room 301",
+      "course": {
+        "id": 1111,
+        "courseCode": "CSE1101",
+        "courseTitle": "Introduction to Computer Science",
+        "creditHours": 3
+      }
+    },
+    {
+      "id": "2",
+      "courseId": "1112",
+      "teacherId": "7",
+      "dayOfWeek": "Monday",
+      "startTime": "10:30",
+      "endTime": "12:00",
+      "venue": "Computer Lab 1",
+      "course": {
+        "id": 1112,
+        "courseCode": "CSE1102",
+        "courseTitle": "Data Structures",
+        "creditHours": 3
+      }
+    },
+    {
+      "id": "3",
+      "courseId": "1113",
+      "teacherId": "8",
+      "dayOfWeek": "Tuesday",
+      "startTime": "08:30",
+      "endTime": "10:00",
+      "venue": "Room 302",
+      "course": {
+        "id": 1113,
+        "courseCode": "CSE1103",
+        "courseTitle": "Algorithms",
+        "creditHours": 3
+      }
+    },
+    {
+      "id": "4",
+      "courseId": "1114",
+      "teacherId": "9",
+      "dayOfWeek": "Tuesday",
+      "startTime": "10:30",
+      "endTime": "12:00",
+      "venue": "Digital Lab",
+      "course": {
+        "id": 1114,
+        "courseCode": "CSE1104",
+        "courseTitle": "Computer Organization",
+        "creditHours": 3
+      }
+    },
+    {
+      "id": "5",
+      "courseId": "1115",
+      "teacherId": "6",
+      "dayOfWeek": "Wednesday",
+      "startTime": "08:30",
+      "endTime": "10:00",
+      "venue": "Computer Lab 2",
+      "course": {
+        "id": 1115,
+        "courseCode": "CSE1105",
+        "courseTitle": "Operating Systems",
+        "creditHours": 3
+      }
+    },
+    {
+      "id": "6",
+      "courseId": "1116",
+      "teacherId": "7",
+      "dayOfWeek": "Wednesday",
+      "startTime": "10:30",
+      "endTime": "12:00",
+      "venue": "Computer Lab 1",
+      "course": {
+        "id": 1116,
+        "courseCode": "CSE1106",
+        "courseTitle": "Database Systems",
+        "creditHours": 3
+      }
+    },
+    {
+      "id": "7",
+      "courseId": "1121",
+      "teacherId": "8",
+      "dayOfWeek": "Thursday",
+      "startTime": "08:30",
+      "endTime": "10:00",
+      "venue": "Computer Lab 2",
+      "course": {
+        "id": 1121,
+        "courseCode": "CSE1121",
+        "courseTitle": "Software Engineering",
+        "creditHours": 3
+      }
+    },
+    {
+      "id": "8",
+      "courseId": "1122",
+      "teacherId": "9",
+      "dayOfWeek": "Thursday",
+      "startTime": "10:30",
+      "endTime": "12:00",
+      "venue": "Room 303",
+      "course": {
+        "id": 1122,
+        "courseCode": "CSE1122",
+        "courseTitle": "Computer Networks",
+        "creditHours": 3
+      }
+    },
+    {
+      "id": "9",
+      "courseId": "2111",
+      "teacherId": "6",
+      "dayOfWeek": "Monday",
+      "startTime": "14:00",
+      "endTime": "15:30",
+      "venue": "Computer Lab 1",
+      "course": {
+        "id": 2111,
+        "courseCode": "CSE2111",
+        "courseTitle": "Artificial Intelligence",
+        "creditHours": 3
+      }
+    },
+    {
+      "id": "10",
+      "courseId": "2112",
+      "teacherId": "7",
+      "dayOfWeek": "Tuesday",
+      "startTime": "14:00",
+      "endTime": "15:30",
+      "venue": "Room 304",
+      "course": {
+        "id": 2112,
+        "courseCode": "CSE2112",
+        "courseTitle": "Machine Learning",
+        "creditHours": 3
+      }
+    },
+    {
+      "id": "11",
+      "courseId": "3111",
+      "teacherId": "8",
+      "dayOfWeek": "Wednesday",
+      "startTime": "14:00",
+      "endTime": "15:30",
+      "venue": "AI Lab",
+      "course": {
+        "id": 3111,
+        "courseCode": "CSE3111",
+        "courseTitle": "Deep Learning",
+        "creditHours": 3
+      }
+    },
+    {
+      "id": "12",
+      "courseId": "3112",
+      "teacherId": "9",
+      "dayOfWeek": "Thursday",
+      "startTime": "14:00",
+      "endTime": "15:30",
+      "venue": "Computer Lab 3",
+      "course": {
+        "id": 3112,
+        "courseCode": "CSE3112",
+        "courseTitle": "Natural Language Processing",
+        "creditHours": 3
+      }
+    },
+    {
+      "id": "13",
+      "courseId": "4124",
+      "teacherId": "6",
+      "dayOfWeek": "Friday",
+      "startTime": "08:30",
+      "endTime": "10:00",
+      "venue": "Room 305",
+      "course": {
+        "id": 4124,
+        "courseCode": "CSE4124",
+        "courseTitle": "Computer Vision",
+        "creditHours": 3
+      }
+    },
+    {
+      "id": "14",
+      "courseId": "4121",
+      "teacherId": "7",
+      "dayOfWeek": "Friday",
+      "startTime": "10:30",
+      "endTime": "12:00",
+      "venue": "Computer Lab 4",
+      "course": {
+        "id": 4121,
+        "courseCode": "CSE4121",
+        "courseTitle": "Robotics",
+        "creditHours": 3
+      }
+    }
+  ]
+}
