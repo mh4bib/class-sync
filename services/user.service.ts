@@ -14,10 +14,31 @@ class UserService {
       .map(({ password, ...user }) => user) as User[];
   }
 
+  // Add new method to get teachers
+  async getAllTeachers(): Promise<User[]> {
+    // Simulate API delay
+    await new Promise((resolve) => setTimeout(resolve, 500));
+
+    // Filter only teachers from the JSON file
+    return users.users
+      .filter((user) => user.role === "teacher")
+      .map(({ password, ...user }) => user) as User[];
+  }
+
   // Future implementation using real API
   async getAllStudentsApi(): Promise<User[]> {
     try {
       const response = await api.get<User[]>("/users/students");
+      return response.data;
+    } catch (error) {
+      throw this.handleError(error);
+    }
+  }
+
+  // Future implementation
+  async getAllTeachersApi(): Promise<User[]> {
+    try {
+      const response = await api.get<User[]>("/users/teachers");
       return response.data;
     } catch (error) {
       throw this.handleError(error);

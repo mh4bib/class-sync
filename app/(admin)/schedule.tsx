@@ -6,6 +6,8 @@ import { ThemedText } from "@/components/ThemedText";
 import { IconSymbol } from "@/components/ui/IconSymbol";
 import { Schedule } from "@/types/schedule";
 import { scheduleService } from "@/services/schedule.service";
+import { ScheduleFormModal } from "@/components/ScheduleFormModal";
+import { NewScheduleFormModal } from "@/components/NewScheduleFormModal";
 
 interface GroupedSchedules {
   [key: string]: {
@@ -24,6 +26,8 @@ export default function ScheduleScreen() {
   const [selectedSchedule, setSelectedSchedule] = useState<Schedule | null>(
     null
   );
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isNewModalVisible, setIsNewModalVisible] = useState(false);
 
   useEffect(() => {
     loadSchedules();
@@ -75,19 +79,55 @@ export default function ScheduleScreen() {
 
   const handleEditSchedule = (schedule: Schedule) => {
     setSelectedSchedule(schedule);
-    setIsEditMode(true);
-    // Open edit modal/form
-    Alert.alert(
-      "Edit Schedule",
-      "Edit schedule functionality to be implemented"
-    );
+    setIsModalVisible(true);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedSchedule(null);
+    setIsModalVisible(false);
+  };
+
+  const handleUpdateSchedule = async (updatedSchedule: Schedule) => {
+    try {
+      const result = await scheduleService.updateSchedule(updatedSchedule);
+      
+      // Update local state
+      setSchedules((prev) =>
+        prev.map((schedule) =>
+          schedule.id === result.id ? result : schedule
+        )
+      );
+      
+      // Regroup schedules
+      groupSchedules(schedules.map((schedule) =>
+        schedule.id === result.id ? result : schedule
+      ));
+      
+      handleCloseModal();
+    } catch (error) {
+      console.error("Error updating schedule:", error);
+      Alert.alert("Error", "Failed to update schedule");
+    }
   };
 
   const handleAddSchedule = () => {
-    setSelectedSchedule(null);
-    setIsEditMode(true);
-    // Open add modal/form
-    Alert.alert("Add Schedule", "Add schedule functionality to be implemented");
+    setIsNewModalVisible(true);
+  };
+
+  const handleCloseNewModal = () => {
+    setIsNewModalVisible(false);
+  };
+
+  const handleCreateSchedule = async (newSchedule: Partial<Schedule>) => {
+    try {
+      const result = await scheduleService.createSchedule(newSchedule);
+      setSchedules((prev) => [...prev, result]);
+      groupSchedules([...schedules, result]);
+      handleCloseNewModal();
+    } catch (error) {
+      console.error("Error creating schedule:", error);
+      Alert.alert("Error", "Failed to create schedule");
+    }
   };
 
   const renderScheduleItem = (schedule: Schedule) => {
@@ -112,11 +152,6 @@ export default function ScheduleScreen() {
 
   return (
     <ThemedView style={styles.container}>
-      <TouchableOpacity style={styles.addButton} onPress={handleAddSchedule}>
-        <IconSymbol name="plus.circle.fill" size={24} color="#007AFF" />
-        <ThemedText style={styles.addButtonText}>Add New Schedule</ThemedText>
-      </TouchableOpacity>
-
       <ScrollView style={styles.scrollView}>
         {weekDays.map((day) => (
           <ThemedView key={day} style={styles.dayContainer}>
@@ -138,6 +173,24 @@ export default function ScheduleScreen() {
           </ThemedView>
         ))}
       </ScrollView>
+
+      {/* Floating Action Button */}
+      <TouchableOpacity style={styles.fab} onPress={handleAddSchedule}>
+        <IconSymbol name="plus" size={24} color="#fff" />
+      </TouchableOpacity>
+
+      <ScheduleFormModal
+        visible={isModalVisible}
+        onClose={handleCloseModal}
+        onSubmit={handleUpdateSchedule}
+        schedule={selectedSchedule}
+      />
+
+      <NewScheduleFormModal
+        visible={isNewModalVisible}
+        onClose={handleCloseNewModal}
+        onSubmit={handleCreateSchedule}
+      />
     </ThemedView>
   );
 }
@@ -177,6 +230,22 @@ const styles = StyleSheet.create({
     shadowRadius: 2,
     elevation: 2,
     marginBottom: 8,
+  },
+  fab: {
+    position: 'absolute',
+    right: 20,
+    bottom: 20,
+    backgroundColor: '#007AFF',
+    width: 56,
+    height: 56,
+    borderRadius: 28,
+    justifyContent: 'center',
+    alignItems: 'center',
+    elevation: 4,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
   },
   addButton: {
     flexDirection: "row",
