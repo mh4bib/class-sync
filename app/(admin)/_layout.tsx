@@ -41,6 +41,15 @@ export default function AdminTabLayout() {
           }}
         />
         <Tabs.Screen
+          name="all-teachers"
+          options={{
+            title: "Teachers",
+            tabBarIcon: ({ color }) => (
+              <IconSymbol size={28} name="person.2" color={color} />
+            ),
+          }}
+        />
+        <Tabs.Screen
           name="schedule"
           options={{
             title: "Schedule",
