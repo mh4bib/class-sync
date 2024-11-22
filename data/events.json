@@ -1,0 +1,92 @@
+{
+  "events": [
+    {
+      "id": "1",
+      "title": "Event 1",
+      "description": "Description 1",
+      "date": "2021-12-01",
+      "course": "CSE1105",
+      "type": "Assignment"
+    },
+    {
+      "id": "2",
+      "title": "Event 2",
+      "description": "Description 2",
+      "date": "2021-12-02",
+      "course": "CSE1101",
+      "type": "Class Test"
+    },
+    {
+      "id": "3",
+      "title": "Event 3",
+      "description": "Description 3",
+      "date": "2021-12-03",
+      "course": "CSE1102",
+      "type": "Presentation"
+    },
+    {
+      "id": "4",
+      "title": "Event 4",
+      "description": "Description 4",
+      "date": "2021-12-04",
+      "course": "CSE1103",
+      "type": "Quiz"
+    },
+    {
+      "id": "5",
+      "title": "Event 5",
+      "description": "Description 5",
+      "date": "2021-12-05",
+      "course": "CSE1104",
+      "type": "Assignment"
+    },
+    {
+      "id": "6",
+      "title": "Event 6",
+      "description": "Description 6",
+      "date": "2021-12-06",
+      "course": "CSE1106",
+      "type": "Class Test"
+    },
+    {
+      "id": "7",
+      "title": "Event 7",
+      "description": "Description 7",
+      "date": "2021-12-07",
+      "course": "CSE1201",
+      "type": "Presentation"
+    },
+    {
+      "id": "8",
+      "title": "Event 8",
+      "description": "Description 8",
+      "date": "2021-12-08",
+      "course": "CSE1202",
+      "type": "Quiz"
+    },
+    {
+      "id": "9",
+      "title": "Event 9",
+      "description": "Description 9",
+      "date": "2021-12-09",
+      "course": "CSE1203",
+      "type": "Assignment"
+    },
+    {
+      "id": "10",
+      "title": "Event 10",
+      "description": "Description 10",
+      "date": "2021-12-10",
+      "course": "CSE1204",
+      "type": "Class Test"
+    },
+    {
+      "id": "11",
+      "title": "Event 11",
+      "description": "Description 11",
+      "date": "2021-12-11",
+      "course": "CSE1205",
+      "type": "Presentation"
+    }
+  ]
+}

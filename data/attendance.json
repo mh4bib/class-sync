@@ -1,0 +1,116 @@
+{
+  "attendance": [
+    {
+      "id": 1,
+      "studentId": 3,
+      "courseId": 1115,
+      "date": "2021-12-01",
+      "isPresent": true
+    },
+    {
+      "id": 2,
+      "studentId": 3,
+      "courseId": 1111,
+      "date": "2021-12-02",
+      "isPresent": false
+    },
+    {
+      "id": 3,
+      "studentId": 10,
+      "courseId": 1112,
+      "date": "2021-12-03",
+      "isPresent": true
+    },
+    {
+      "id": 4,
+      "studentId": 11,
+      "courseId": 1113,
+      "date": "2021-12-04",
+      "isPresent": true
+    },
+    {
+      "id": 5,
+      "studentId": 12,
+      "courseId": 1114,
+      "date": "2021-12-05",
+      "isPresent": false
+    },
+    {
+      "id": 6,
+      "studentId": 13,
+      "courseId": 1116,
+      "date": "2021-12-06",
+      "isPresent": true
+    },
+    {
+      "id": 7,
+      "studentId": 14,
+      "courseId": 1121,
+      "date": "2021-12-07",
+      "isPresent": false
+    },
+    {
+      "id": 8,
+      "studentId": 15,
+      "courseId": 1122,
+      "date": "2021-12-08",
+      "isPresent": true
+    },
+    {
+      "id": 9,
+      "studentId": 16,
+      "courseId": 1123,
+      "date": "2021-12-09",
+      "isPresent": true
+    },
+    {
+      "id": 10,
+      "studentId": 17,
+      "courseId": 1124,
+      "date": "2021-12-10",
+      "isPresent": false
+    },
+    {
+      "id": 11,
+      "studentId": 18,
+      "courseId": 1125,
+      "date": "2021-12-11",
+      "isPresent": true
+    },
+    {
+      "id": 12,
+      "studentId": 3,
+      "courseId": 1126,
+      "date": "2021-12-12",
+      "isPresent": false
+    },
+    {
+      "id": 13,
+      "studentId": 10,
+      "courseId": 2111,
+      "date": "2021-12-13",
+      "isPresent": true
+    },
+    {
+      "id": 14,
+      "studentId": 11,
+      "courseId": 2112,
+      "date": "2021-12-14",
+      "isPresent": true
+    },
+    {
+      "id": 15,
+      "studentId": 12,
+      "courseId": 2113,
+      "date": "2021-12-15",
+      "isPresent": false
+    },
+    {
+      "id": 16,
+      "studentId": 13,
+      "courseId": 2114,
+      "date": "2021-12-16",
+      "isPresent": true
+    }
+  ]
+}

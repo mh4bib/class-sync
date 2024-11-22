@@ -1,6 +1,5 @@
 // app/(teacher)/_layout.tsx
 import { Tabs } from "expo-router";
-import { Platform } from "react-native";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { HapticTab } from "@/components/HapticTab";
 import { IconSymbol } from "@/components/ui/IconSymbol";
@@ -22,20 +21,38 @@ export default function TeacherTabLayout() {
         }}
       >
         <Tabs.Screen
-          name="classes"
+          name="schedule"
           options={{
-            title: "Classes",
+            title: "Schedule",
             tabBarIcon: ({ color }) => (
-              <IconSymbol size={28} name="book" color={color} />
+              <IconSymbol size={28} name="calendar" color={color} />
             ),
           }}
         />
         <Tabs.Screen
-          name="grades"
+          name="events"
           options={{
-            title: "Grades",
+            title: "Events",
             tabBarIcon: ({ color }) => (
-              <IconSymbol size={28} name="list.clipboard" color={color} />
+              <IconSymbol size={28} name="star" color={color} />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="attendance"
+          options={{
+            title: "Attendance", 
+            tabBarIcon: ({ color }) => (
+              <IconSymbol size={28} name="person.badge.check" color={color} />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="forum"
+          options={{
+            title: "Forum",
+            tabBarIcon: ({ color }) => (
+              <IconSymbol size={28} name="bubble.left.and.bubble.right" color={color} />
             ),
           }}
         />
