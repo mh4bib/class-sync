@@ -120,7 +120,9 @@ export default function EventsScreen() {
   const handleCreateEvent = async (eventData: Partial<Event>) => {
     try {
       const newEvent = await eventService.createEvent(eventData);
-      setEvents((prev) => [...prev, newEvent]);
+      const updatedEvents = [...events, newEvent];
+      setEvents(updatedEvents);
+      setGroupedEvents(groupEventsByDate(updatedEvents));
       handleCloseModal();
     } catch (error) {
       console.error("Error creating event:", error);
@@ -131,11 +133,11 @@ export default function EventsScreen() {
   const handleUpdateEvent = async (eventData: Partial<Event>) => {
     try {
       const updatedEvent = await eventService.updateEvent(eventData);
-      setEvents((prev) =>
-        prev.map((event) =>
-          event.id === updatedEvent.id ? updatedEvent : event
-        )
+      const updatedEvents = events.map((event) =>
+        event.id === updatedEvent.id ? updatedEvent : event
       );
+      setEvents(updatedEvents);
+      setGroupedEvents(groupEventsByDate(updatedEvents));
       handleCloseModal();
     } catch (error) {
       console.error("Error updating event:", error);
@@ -146,7 +148,9 @@ export default function EventsScreen() {
   const handleDeleteEvent = async (id: string) => {
     try {
       await eventService.deleteEvent(id);
-      setEvents((prev) => prev.filter((event) => event.id !== id));
+      const updatedEvents = events.filter((event) => event.id !== id);
+      setEvents(updatedEvents);
+      setGroupedEvents(groupEventsByDate(updatedEvents));
       handleCloseModal();
     } catch (error) {
       console.error("Error deleting event:", error);
