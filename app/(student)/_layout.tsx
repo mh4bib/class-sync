@@ -20,20 +20,33 @@ export default function StudentTabLayout() {
         }}
       >
         <Tabs.Screen
-          name="courses"
+          name="schedule"
           options={{
-            title: "My Courses",
+            title: "Schedule",
             tabBarIcon: ({ color }) => (
-              <IconSymbol size={28} name="book" color={color} />
+              <IconSymbol size={28} name="calendar" color={color} />
             ),
           }}
         />
         <Tabs.Screen
-          name="grades"
+          name="events"
           options={{
-            title: "My Grades",
+            title: "Events",
             tabBarIcon: ({ color }) => (
-              <IconSymbol size={28} name="list.bullet" color={color} />
+              <IconSymbol size={28} name="star" color={color} />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="forum"
+          options={{
+            title: "Forum",
+            tabBarIcon: ({ color }) => (
+              <IconSymbol
+                size={28}
+                name="bubble.left.and.bubble.right"
+                color={color}
+              />
             ),
           }}
         />
