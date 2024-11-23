@@ -8,6 +8,7 @@ export interface User {
   email: string;
   role: "admin" | "teacher" | "student";
   isSuspended: boolean;
+  session?: string;
 }
 
 export interface LoginResponse {

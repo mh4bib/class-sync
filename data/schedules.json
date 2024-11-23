@@ -13,7 +13,8 @@
         "courseCode": "CSE1101",
         "courseTitle": "Introduction to Computer Science",
         "creditHours": 3
-      }
+      },
+      "session": "2020-2021"
     },
     {
       "id": "2",
@@ -28,7 +29,8 @@
         "courseCode": "CSE1102",
         "courseTitle": "Data Structures",
         "creditHours": 3
-      }
+      },
+      "session": "2021-2022"
     },
     {
       "id": "3",
@@ -43,7 +45,8 @@
         "courseCode": "CSE1103",
         "courseTitle": "Algorithms",
         "creditHours": 3
-      }
+      },
+      "session": "2019-2020"
     },
     {
       "id": "4",
@@ -58,7 +61,8 @@
         "courseCode": "CSE1104",
         "courseTitle": "Computer Organization",
         "creditHours": 3
-      }
+      },
+      "session": "2020-2021"
     },
     {
       "id": "5",
@@ -73,7 +77,8 @@
         "courseCode": "CSE1105",
         "courseTitle": "Operating Systems",
         "creditHours": 3
-      }
+      },
+      "session": "2021-2022"
     },
     {
       "id": "6",
@@ -88,7 +93,8 @@
         "courseCode": "CSE1106",
         "courseTitle": "Database Systems",
         "creditHours": 3
-      }
+      },
+      "session": "2019-2020"
     },
     {
       "id": "7",
@@ -103,7 +109,8 @@
         "courseCode": "CSE1121",
         "courseTitle": "Software Engineering",
         "creditHours": 3
-      }
+      },
+      "session": "2020-2021"
     },
     {
       "id": "8",
@@ -118,7 +125,8 @@
         "courseCode": "CSE1122",
         "courseTitle": "Computer Networks",
         "creditHours": 3
-      }
+      },
+      "session": "2021-2022"
     },
     {
       "id": "9",
@@ -133,7 +141,8 @@
         "courseCode": "CSE2111",
         "courseTitle": "Artificial Intelligence",
         "creditHours": 3
-      }
+      },
+      "session": "2019-2020"
     },
     {
       "id": "10",
@@ -148,7 +157,8 @@
         "courseCode": "CSE2112",
         "courseTitle": "Machine Learning",
         "creditHours": 3
-      }
+      },
+      "session": "2020-2021"
     },
     {
       "id": "11",
@@ -163,7 +173,8 @@
         "courseCode": "CSE3111",
         "courseTitle": "Deep Learning",
         "creditHours": 3
-      }
+      },
+      "session": "2021-2022"
     },
     {
       "id": "12",
@@ -178,7 +189,8 @@
         "courseCode": "CSE3112",
         "courseTitle": "Natural Language Processing",
         "creditHours": 3
-      }
+      },
+      "session": "2019-2020"
     },
     {
       "id": "13",
@@ -193,7 +205,8 @@
         "courseCode": "CSE4124",
         "courseTitle": "Computer Vision",
         "creditHours": 3
-      }
+      },
+      "session": "2020-2021"
     },
     {
       "id": "14",
@@ -208,7 +221,8 @@
         "courseCode": "CSE4121",
         "courseTitle": "Robotics",
         "creditHours": 3
-      }
+      },
+      "session": "2021-2022"
     }
   ]
 }

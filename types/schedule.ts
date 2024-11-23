@@ -7,6 +7,7 @@ export interface Schedule {
   endTime: string;
   venue: string;
   course: Course;
+  session: string;
 }
 
 export interface Course {

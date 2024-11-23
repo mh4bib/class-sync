@@ -62,6 +62,26 @@ class ScheduleService {
     return schedule;
   }
 
+  // Mock implementation for student schedules
+  async getStudentSchedules(studentSession: string): Promise<Schedule[]> {
+    // Simulate API delay
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    const schedulesData = require("@/data/schedules.json");
+    return schedulesData.schedules.filter(
+      (schedule: Schedule) => schedule.session === studentSession
+    );
+  }
+
+  // Future API implementation for student schedules
+  async getStudentSchedulesApi(studentSession: string): Promise<Schedule[]> {
+    try {
+      const response = await api.get<Schedule[]>(`/schedules/student/${studentSession}`);
+      return response.data;
+    } catch (error) {
+      throw this.handleError(error);
+    }
+  }
+
   // Future API implementation
   async updateScheduleApi(schedule: Schedule): Promise<Schedule> {
     try {

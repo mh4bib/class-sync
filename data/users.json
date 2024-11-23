@@ -19,6 +19,9 @@
       "email": "student@test.com",
       "password": "student123",
       "role": "student",
+      "studentId": "CE21005",
+      "studentName": "John Doe",
+      "session": "2020-2021",
       "isSuspended": false
     },
     {
@@ -68,6 +71,9 @@
       "email": "student2@test.com",
       "password": "student456",
       "role": "student",
+      "studentId": "CE22006",
+      "studentName": "Jane Doe",
+      "studentSession": "2021-2022",
       "isSuspended": false
     },
     {
@@ -75,6 +81,9 @@
       "email": "student3@test.com",
       "password": "student789",
       "role": "student",
+      "studentId": "CE20007",
+      "studentName": "Alice Smith",
+      "studentSession": "2019-2023",
       "isSuspended": false
     },
     {
@@ -82,6 +91,9 @@
       "email": "student4@test.com",
       "password": "student101",
       "role": "student",
+      "studentId": "CE21008",
+      "studentName": "Bob Johnson",
+      "studentSession": "2020-2021",
       "isSuspended": false
     },
     {
@@ -89,6 +101,9 @@
       "email": "student5@test.com",
       "password": "student102",
       "role": "student",
+      "studentId": "CE21009",
+      "studentName": "Charlie Brown",
+      "studentSession": "2020-2021",
       "isSuspended": false
     },
     {
@@ -96,6 +111,9 @@
       "email": "student6@test.com",
       "password": "student103",
       "role": "student",
+      "studentId": "CE20010",
+      "studentName": "David Wilson",
+      "studentSession": "2019-2020",
       "isSuspended": false
     },
     {
@@ -103,6 +121,9 @@
       "email": "student7@test.com",
       "password": "student104",
       "role": "student",
+      "studentId": "CE20011",
+      "studentName": "Eve Davis",
+      "studentSession": "2019-2020",
       "isSuspended": false
     },
     {
@@ -110,6 +131,9 @@
       "email": "student8@test.com",
       "password": "student105",
       "role": "student",
+      "studentId": "CE22012",
+      "studentName": "Frank Miller",
+      "studentSession": "2021-2022",
       "isSuspended": false
     },
     {
@@ -117,6 +141,9 @@
       "email": "student9@test.com",
       "password": "student106",
       "role": "student",
+      "studentId": "CE22013",
+      "studentName": "Grace Lee",
+      "studentSession": "2021-2022",
       "isSuspended": false
     },
     {
@@ -124,6 +151,9 @@
       "email": "student10@test.com",
       "password": "student107",
       "role": "student",
+      "studentId": "CE21014",
+      "studentName": "Hank Moore",
+      "studentSession": "2019-2023",
       "isSuspended": false
     }
   ]
