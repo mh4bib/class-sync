@@ -18,6 +18,10 @@ export default function TeacherTabLayout() {
           headerShown: false,
           tabBarButton: HapticTab,
           tabBarBackground: TabBarBackground,
+          tabBarStyle: {
+            backgroundColor: Colors[colorScheme ?? "light"].background,
+            borderTopColor: Colors[colorScheme ?? "light"].card,
+          },
         }}
       >
         <Tabs.Screen
@@ -41,7 +45,7 @@ export default function TeacherTabLayout() {
         <Tabs.Screen
           name="attendance"
           options={{
-            title: "Attendance", 
+            title: "Attendance",
             tabBarIcon: ({ color }) => (
               <IconSymbol size={28} name="person.badge.check" color={color} />
             ),
@@ -52,7 +56,11 @@ export default function TeacherTabLayout() {
           options={{
             title: "Forum",
             tabBarIcon: ({ color }) => (
-              <IconSymbol size={28} name="bubble.left.and.bubble.right" color={color} />
+              <IconSymbol
+                size={28}
+                name="bubble.left.and.bubble.right"
+                color={color}
+              />
             ),
           }}
         />

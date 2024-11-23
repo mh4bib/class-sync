@@ -36,18 +36,23 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     alignItems: "center",
     minWidth: 100,
+    elevation: 2,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3,
   },
   primaryButton: {
-    backgroundColor: "#007AFF",
+    backgroundColor: "#526D82",
   },
   secondaryButton: {
-    backgroundColor: "#999",
+    backgroundColor: "#9DB2BF",
   },
   dangerButton: {
     backgroundColor: "#FF3B30",
   },
   buttonText: {
-    color: "#fff",
+    color: "#DDE6ED",
     fontSize: 16,
     fontWeight: "bold",
   },

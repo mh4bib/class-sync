@@ -80,23 +80,29 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
+    backgroundColor: '#27374D',
   },
   scrollView: {
     flex: 1,
   },
   dateContainer: {
-    marginBottom: 24,
+    marginBottom: 20,
   },
   dateHeader: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: "bold",
-    marginBottom: 12,
+    marginBottom: 10,
+    color: '#DDE6ED',
   },
   eventItem: {
     padding: 12,
     borderRadius: 8,
-    borderWidth: 1,
-    borderColor: "#ddd",
     marginBottom: 8,
+    backgroundColor: '#526D82',
+    elevation: 3,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3,
   },
 });

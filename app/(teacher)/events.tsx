@@ -207,6 +207,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
+    backgroundColor: '#27374D',
   },
   scrollView: {
     flex: 1,
@@ -214,9 +215,13 @@ const styles = StyleSheet.create({
   eventItem: {
     padding: 12,
     borderRadius: 8,
-    borderWidth: 1,
-    borderColor: "#ddd",
     marginBottom: 8,
+    backgroundColor: '#526D82',
+    elevation: 3,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3,
   },
   fab: {
     position: "absolute",
@@ -225,10 +230,14 @@ const styles = StyleSheet.create({
     width: 56,
     height: 56,
     borderRadius: 28,
-    backgroundColor: "#007AFF",
+    backgroundColor: "#526D82",
     justifyContent: "center",
     alignItems: "center",
     elevation: 4,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
   },
   dateContainer: {
     marginBottom: 20,
@@ -237,5 +246,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     marginBottom: 10,
+    color: '#DDE6ED',
   },
 });

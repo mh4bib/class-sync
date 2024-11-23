@@ -43,11 +43,12 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
     marginVertical: 8,
     borderRadius: 12,
+    backgroundColor: '#526D82',
+    elevation: 3,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
+    shadowOpacity: 0.25,
+    shadowRadius: 3,
   },
   avatar: {
     width: 60,
@@ -62,5 +63,8 @@ const styles = StyleSheet.create({
   role: {
     opacity: 0.7,
     fontSize: 14,
+  },
+  text: {
+    color: '#DDE6ED',
   },
 });

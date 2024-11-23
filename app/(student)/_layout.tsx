@@ -17,6 +17,10 @@ export default function StudentTabLayout() {
           headerShown: false,
           tabBarButton: HapticTab,
           tabBarBackground: TabBarBackground,
+          tabBarStyle: {
+            backgroundColor: Colors[colorScheme ?? "light"].background,
+            borderTopColor: Colors[colorScheme ?? "light"].card,
+          },
         }}
       >
         <Tabs.Screen

@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { FlatList, StyleSheet, TouchableOpacity, Alert } from "react-native";
 import { ThemedView } from "@/components/ThemedView";
@@ -135,6 +134,7 @@ export default function AllTeachersScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#27374D',
   },
   list: {
     paddingVertical: 16,
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 20,
     bottom: 20,
-    backgroundColor: "#007AFF",
+    backgroundColor: "#526D82",
     width: 56,
     height: 56,
     borderRadius: 28,
