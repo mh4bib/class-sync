@@ -3,8 +3,8 @@ export interface Event {
   title: string;
   description: string;
   date: string;
-  course: string;
-  type: EventType;
+  course: string; // courseCode like "CSE1101"
+  type: "Assignment" | "Class Test" | "Presentation" | "Quiz";
 }
 
 export type EventType = "Assignment" | "Class Test" | "Presentation" | "Quiz";

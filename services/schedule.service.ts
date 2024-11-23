@@ -42,7 +42,7 @@ class ScheduleService {
   async updateSchedule(schedule: Schedule): Promise<Schedule> {
     // Simulate API delay
     await new Promise((resolve) => setTimeout(resolve, 500));
-    
+
     // In a real app, this would update the backend
     // For now, just return the updated schedule
     return schedule;
@@ -51,14 +51,15 @@ class ScheduleService {
   async createSchedule(newSchedule: Partial<Schedule>): Promise<Schedule> {
     // Simulate API delay
     await new Promise((resolve) => setTimeout(resolve, 500));
-    
+
     const schedule: Schedule = {
       id: Math.random().toString(36).substr(2, 9),
       ...newSchedule,
-      course: (require("@/data/courses.json").courses)
-        .find((c: Course) => c.id.toString() === newSchedule.courseId)
+      course: require("@/data/courses.json").courses.find(
+        (c: Course) => c.id.toString() === newSchedule.courseId
+      ),
     } as Schedule;
-    
+
     return schedule;
   }
 
@@ -75,7 +76,9 @@ class ScheduleService {
   // Future API implementation for student schedules
   async getStudentSchedulesApi(studentSession: string): Promise<Schedule[]> {
     try {
-      const response = await api.get<Schedule[]>(`/schedules/student/${studentSession}`);
+      const response = await api.get<Schedule[]>(
+        `/schedules/student/${studentSession}`
+      );
       return response.data;
     } catch (error) {
       throw this.handleError(error);
@@ -85,7 +88,10 @@ class ScheduleService {
   // Future API implementation
   async updateScheduleApi(schedule: Schedule): Promise<Schedule> {
     try {
-      const response = await api.put<Schedule>(`/schedules/${schedule.id}`, schedule);
+      const response = await api.put<Schedule>(
+        `/schedules/${schedule.id}`,
+        schedule
+      );
       return response.data;
     } catch (error) {
       throw this.handleError(error);
