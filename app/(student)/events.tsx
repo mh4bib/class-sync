@@ -22,8 +22,10 @@ export default function StudentEventsScreen() {
   const loadData = async () => {
     try {
       // Get events for student's session
-      const studentEvents = await eventService.getStudentEvents(user?.session!);
-      
+      const studentEvents = await eventService.getStudentEvents(
+        user?.studentSession!
+      );
+
       // Sort events by date
       const sortedEvents = studentEvents.sort(
         (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
@@ -80,7 +82,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#27374D',
+    backgroundColor: "#27374D",
   },
   scrollView: {
     flex: 1,
@@ -92,13 +94,13 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     marginBottom: 10,
-    color: '#DDE6ED',
+    color: "#DDE6ED",
   },
   eventItem: {
     padding: 12,
     borderRadius: 8,
     marginBottom: 8,
-    backgroundColor: '#526D82',
+    backgroundColor: "#526D82",
     elevation: 3,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },

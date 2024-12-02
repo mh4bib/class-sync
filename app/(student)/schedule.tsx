@@ -30,7 +30,7 @@ export default function StudentScheduleScreen() {
       const allSchedules = await scheduleService.getSchedules();
       // Filter schedules for the student's session
       const studentSchedules = allSchedules.filter(
-        (schedule) => schedule.session === user?.session
+        (schedule) => schedule.session === user?.studentSession
       );
       setSchedules(studentSchedules);
       groupSchedules(studentSchedules);
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#27374D',
+    backgroundColor: "#27374D",
   },
   scrollView: {
     flex: 1,
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     padding: 12,
     borderRadius: 8,
     marginBottom: 8,
-    backgroundColor: '#526D82',
+    backgroundColor: "#526D82",
     elevation: 3,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },

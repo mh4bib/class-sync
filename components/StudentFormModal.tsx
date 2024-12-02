@@ -30,13 +30,16 @@ export function StudentFormModal({
     email: "",
     role: "student",
     isSuspended: false,
+    studentId: "",
+    studentName: "",
+    studentSession: "",
   });
 
   useEffect(() => {
     if (user) {
       setFormData(user);
     } else {
-      setFormData({ email: "", role: "student", isSuspended: false });
+      setFormData({ email: "", role: "student", isSuspended: false, studentId: "", studentName: "", studentSession: "" });
     }
   }, [user]);
 
@@ -64,6 +67,31 @@ export function StudentFormModal({
               setFormData((prev) => ({ ...prev, email: text }))
             }
             autoCapitalize="none"
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="Student ID"
+            value={formData.studentId}
+            onChangeText={(text) =>
+              setFormData((prev) => ({ ...prev, studentId: text }))
+            }
+            autoCapitalize="none"
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="Student Name"
+            value={formData.studentName}
+            onChangeText={(text) =>
+              setFormData((prev) => ({ ...prev, studentName: text }))
+            }
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="Session"
+            value={formData.studentSession}
+            onChangeText={(text) =>
+              setFormData((prev) => ({ ...prev, studentSession: text }))
+            }
           />
 
           {user && (

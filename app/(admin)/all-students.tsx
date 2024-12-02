@@ -55,6 +55,9 @@ export default function AllStudentsScreen() {
         ...userData,
         role: "student",
         isSuspended: false,
+        studentId: userData.studentId,
+        studentName: userData.studentName,
+        studentSession: userData.studentSession,
       });
       setStudents((prev) => [...prev, newStudent]);
       handleCloseModal();
@@ -66,7 +69,12 @@ export default function AllStudentsScreen() {
 
   const handleUpdateStudent = async (userData: Partial<User>) => {
     try {
-      const updatedStudent = await userService.updateUser(userData);
+      const updatedStudent = await userService.updateUser({
+        ...userData,
+        studentId: userData.studentId,
+        studentName: userData.studentName,
+        studentSession: userData.studentSession,
+      });
       setStudents((prev) =>
         prev.map((student) =>
           student.id === updatedStudent.id ? updatedStudent : student

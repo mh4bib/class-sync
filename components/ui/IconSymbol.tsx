@@ -15,6 +15,8 @@ const MAPPING = {
   star: "star",
   "person.badge.check": "how-to-reg",
   "bubble.left.and.bubble.right": "forum",
+  "plus.circle": "add-circle",
+  plus: "add",
 } as const;
 
 type IconSymbolName = keyof typeof MAPPING;
