@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
-import { StyleSheet, ScrollView } from "react-native";
+import {
+  StyleSheet,
+  ScrollView,
+  Modal,
+  View,
+  TouchableOpacity,
+  Alert,
+} from "react-native";
 import { ThemedView } from "@/components/ThemedView";
 import { ThemedText } from "@/components/ThemedText";
 import { Schedule } from "@/types/schedule";
@@ -16,8 +23,14 @@ const weekDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 
 export default function TeacherScheduleScreen() {
   const [schedules, setSchedules] = useState<Schedule[]>([]);
-  const [groupedSchedules, setGroupedSchedules] = useState<GroupedSchedules>({});
+  const [groupedSchedules, setGroupedSchedules] = useState<GroupedSchedules>(
+    {}
+  );
   const { user } = useAuth();
+  const [selectedSchedule, setSelectedSchedule] = useState<Schedule | null>(
+    null
+  );
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   useEffect(() => {
     loadSchedules();
@@ -71,19 +84,45 @@ export default function TeacherScheduleScreen() {
     return `${yearSuffix(year)} Year ${sem === 1 ? "1st" : "2nd"} Semester`;
   };
 
+  const handleScheduleClick = (schedule: Schedule) => {
+    setSelectedSchedule(schedule);
+    setIsModalVisible(true);
+  };
+
+  const handleTakeAttendance = () => {
+    Alert.alert(
+      "Take Attendance",
+      "Taking attendance for " + selectedSchedule?.course.courseTitle
+    );
+    setIsModalVisible(false);
+  };
+
+  const handleViewAttendance = () => {
+    Alert.alert(
+      "View Attendance",
+      "Viewing attendance for " + selectedSchedule?.course.courseTitle
+    );
+    setIsModalVisible(false);
+  };
+
   const renderScheduleItem = (schedule: Schedule) => {
     const course = schedule.course;
 
     return (
-      <ThemedView key={schedule.id} style={styles.scheduleItem}>
-        <ThemedText type="subtitle">
-          {course?.courseCode} - {course?.courseTitle}
-        </ThemedText>
-        <ThemedText>
-          {schedule.startTime} - {schedule.endTime}
-        </ThemedText>
-        <ThemedText>Venue: {schedule.venue}</ThemedText>
-      </ThemedView>
+      <TouchableOpacity
+        key={schedule.id}
+        onPress={() => handleScheduleClick(schedule)}
+      >
+        <ThemedView style={styles.scheduleItem}>
+          <ThemedText type="subtitle">
+            {course?.courseCode} - {course?.courseTitle}
+          </ThemedText>
+          <ThemedText>
+            {schedule.startTime} - {schedule.endTime}
+          </ThemedText>
+          <ThemedText>Venue: {schedule.venue}</ThemedText>
+        </ThemedView>
+      </TouchableOpacity>
     );
   };
 
@@ -110,6 +149,38 @@ export default function TeacherScheduleScreen() {
           </ThemedView>
         ))}
       </ScrollView>
+
+      <Modal visible={isModalVisible} transparent animationType="slide">
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalContainer}>
+            <ThemedText type="title" style={styles.modalTitle}>
+              {selectedSchedule?.course.courseTitle}
+            </ThemedText>
+            <TouchableOpacity
+              style={styles.modalButton}
+              onPress={handleTakeAttendance}
+            >
+              <ThemedText style={styles.modalButtonText}>
+                Take Attendance
+              </ThemedText>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.modalButton}
+              onPress={handleViewAttendance}
+            >
+              <ThemedText style={styles.modalButtonText}>
+                View Attendance
+              </ThemedText>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.modalButton}
+              onPress={() => setIsModalVisible(false)}
+            >
+              <ThemedText style={styles.modalButtonText}>Close</ThemedText>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
     </ThemedView>
   );
 }
@@ -118,7 +189,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#27374D',
+    backgroundColor: "#27374D",
   },
   scrollView: {
     flex: 1,
@@ -143,11 +214,40 @@ const styles = StyleSheet.create({
     padding: 12,
     borderRadius: 8,
     marginBottom: 8,
-    backgroundColor: '#526D82',
+    backgroundColor: "#526D82",
     elevation: 3,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 3,
+  },
+  modalOverlay: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+  },
+  modalContainer: {
+    width: 300,
+    padding: 20,
+    backgroundColor: "#fff",
+    borderRadius: 10,
+    alignItems: "center",
+  },
+  modalTitle: {
+    fontSize: 20,
+    marginBottom: 20,
+  },
+  modalButton: {
+    width: "100%",
+    padding: 10,
+    marginVertical: 5,
+    backgroundColor: "#526D82",
+    borderRadius: 5,
+    alignItems: "center",
+  },
+  modalButtonText: {
+    color: "#fff",
+    fontSize: 16,
   },
 });
