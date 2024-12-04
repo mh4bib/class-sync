@@ -12,6 +12,7 @@ import { ThemedText } from "@/components/ThemedText";
 import { Schedule } from "@/types/schedule";
 import { scheduleService } from "@/services/schedule.service";
 import { useAuth } from "@/context/AuthContext";
+import { router } from "expo-router";
 
 interface GroupedSchedules {
   [key: string]: {
@@ -90,19 +91,13 @@ export default function TeacherScheduleScreen() {
   };
 
   const handleTakeAttendance = () => {
-    Alert.alert(
-      "Take Attendance",
-      "Taking attendance for " + selectedSchedule?.course.courseTitle
-    );
     setIsModalVisible(false);
+    router.push("/attendance-take");
   };
 
   const handleViewAttendance = () => {
-    Alert.alert(
-      "View Attendance",
-      "Viewing attendance for " + selectedSchedule?.course.courseTitle
-    );
     setIsModalVisible(false);
+    router.push("/attendance-view");
   };
 
   const renderScheduleItem = (schedule: Schedule) => {

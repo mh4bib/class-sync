@@ -3,10 +3,10 @@ import { StyleSheet } from "react-native";
 import { ThemedView } from "@/components/ThemedView";
 import { ThemedText } from "@/components/ThemedText";
 
-export default function AttendanceScreen() {
+export default function TakeAttendanceScreen() {
   return (
     <ThemedView style={styles.container}>
-      <ThemedText type="title" style={styles.text}>Attendance Feature Coming Soon</ThemedText>
+      <ThemedText type="title" style={styles.text}>Take Attendance Coming Soon</ThemedText>
     </ThemedView>
   );
 }

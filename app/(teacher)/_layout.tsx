@@ -43,15 +43,6 @@ export default function TeacherTabLayout() {
           }}
         />
         <Tabs.Screen
-          name="attendance"
-          options={{
-            title: "Attendance",
-            tabBarIcon: ({ color }) => (
-              <IconSymbol size={28} name="person.badge.check" color={color} />
-            ),
-          }}
-        />
-        <Tabs.Screen
           name="forum"
           options={{
             title: "Forum",
@@ -71,6 +62,18 @@ export default function TeacherTabLayout() {
             tabBarIcon: ({ color }) => (
               <IconSymbol size={28} name="person.circle" color={color} />
             ),
+          }}
+        />
+        <Tabs.Screen
+          name="attendance-take"
+          options={{
+            href: null,
+          }}
+        />
+        <Tabs.Screen
+          name="attendance-view"
+          options={{
+            href: null,
           }}
         />
       </Tabs>
