@@ -3,7 +3,7 @@
     {
       "id": 1,
       "studentId": 3,
-      "courseId": 1115,
+      "courseId": 1111,
       "date": "2021-12-01",
       "isPresent": true
     },
@@ -17,14 +17,14 @@
     {
       "id": 3,
       "studentId": 10,
-      "courseId": 1112,
+      "courseId": 1111,
       "date": "2021-12-03",
       "isPresent": true
     },
     {
       "id": 4,
       "studentId": 11,
-      "courseId": 1113,
+      "courseId": 1111,
       "date": "2021-12-04",
       "isPresent": true
     },

@@ -97,7 +97,15 @@ export default function TeacherScheduleScreen() {
 
   const handleViewAttendance = () => {
     setIsModalVisible(false);
-    router.push("/attendance-view");
+    if (selectedSchedule) {
+      router.push({
+        pathname: "/attendance-view",
+        params: {
+          courseId: selectedSchedule.course.id.toString(),
+          courseTitle: selectedSchedule.course.courseTitle
+        }
+      });
+    }
   };
 
   const renderScheduleItem = (schedule: Schedule) => {
