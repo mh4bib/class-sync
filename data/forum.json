@@ -1,0 +1,64 @@
+{
+  "forum": [
+    {
+      "id": 1,
+      "title": "First Post",
+      "content": "This is the first post on the forum.",
+      "author": "John Doe",
+      "date": "2020-01-01",
+      "upVotes": 5,
+      "downVotes": 2,
+      "userId": 3,
+      "comments": [
+        {
+          "id": 1,
+          "content": "This is a comment on the first post.",
+          "author": "Jane Doe",
+          "date": "2020-01-02",
+          "upVotes": 3,
+          "downVotes": 1,
+          "userId": 2
+        },
+        {
+          "id": 2,
+          "content": "This is another comment on the first post.",
+          "author": "Alice",
+          "date": "2020-01-03",
+          "upVotes": 2,
+          "downVotes": 0,
+          "userId": 3
+        },
+        {
+          "id": 3,
+          "content": "This is yet another comment on the first post.",
+          "author": "Bob",
+          "date": "2020-01-04",
+          "upVotes": 1,
+          "downVotes": 1,
+          "userId": 10
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Second Post",
+      "content": "This is the second post on the forum.",
+      "author": "John Doe",
+      "date": "2020-01-01",
+      "upVotes": 5,
+      "downVotes": 2,
+      "userId": 3,
+      "comments": [
+        {
+          "id": 1,
+          "content": "This is a comment on the second post.",
+          "author": "Jane Doe",
+          "date": "2020-01-02",
+          "upVotes": 3,
+          "downVotes": 1,
+          "userId": 2
+        }
+      ]
+    }
+  ]
+}

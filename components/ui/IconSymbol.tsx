@@ -17,6 +17,9 @@ const MAPPING = {
   "bubble.left.and.bubble.right": "forum",
   "plus.circle": "add-circle",
   plus: "add",
+  "arrow.up": "arrow-upward",
+  "arrow.down": "arrow-downward",
+  "bubble.left": "chat-bubble",
 } as const;
 
 type IconSymbolName = keyof typeof MAPPING;
