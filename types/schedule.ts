@@ -1,6 +1,6 @@
 export interface Schedule {
   id: string;
-  courseId: string;
+  courseId: number;  // Changed from string to number
   teacherId: string;
   dayOfWeek: string;
   startTime: string;
@@ -15,4 +15,11 @@ export interface Course {
   courseCode: string;
   courseTitle: string;
   creditHours: number;
+}
+
+export interface Student {
+  id: string;
+  studentId: string;
+  studentName: string;
+  session: string;
 }

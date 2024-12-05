@@ -92,7 +92,15 @@ export default function TeacherScheduleScreen() {
 
   const handleTakeAttendance = () => {
     setIsModalVisible(false);
-    router.push("/attendance-take");
+    if (selectedSchedule) {
+      router.push({
+        pathname: "/attendance-take",
+        params: {
+          courseId: selectedSchedule.course.id.toString(),
+          session: selectedSchedule.session
+        }
+      });
+    }
   };
 
   const handleViewAttendance = () => {

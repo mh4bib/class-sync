@@ -1,5 +1,7 @@
 import { api } from "./api";
 import attendanceData from "@/data/attendance.json";
+import userData from "@/data/users.json";
+import { Student } from "@/types/schedule";
 
 interface Attendance {
   id: number;
@@ -89,6 +91,21 @@ class AttendanceService {
       totalPresent: records.filter(r => r.isPresent).length,
       totalClasses: records.length
     }));
+  }
+
+  async getStudentsForCourse(courseId: number, session: string): Promise<Student[]> {
+    // In a real app, this would be an API call
+    // For now, we'll filter students from users.json based on session
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    
+    return userData.users
+      .filter(user => user.role === 'student' && user.studentSession === session)
+      .map(user => ({
+        id: user.id,
+        studentId: user.studentId,
+        studentName: user.studentName,
+        session: user.studentSession
+      }));
   }
 
   private handleError(error: any) {
