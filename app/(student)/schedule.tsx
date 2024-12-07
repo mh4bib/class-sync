@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { StyleSheet, ScrollView } from "react-native";
+import { StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import { ThemedView } from "@/components/ThemedView";
 import { ThemedText } from "@/components/ThemedText";
 import { Schedule } from "@/types/schedule";
 import { scheduleService } from "@/services/schedule.service";
 import { useAuth } from "@/context/AuthContext";
+import { Colors } from "@/constants/Colors";
 
 interface GroupedSchedules {
   [key: string]: {
@@ -77,7 +78,11 @@ export default function StudentScheduleScreen() {
     const course = schedule.course;
 
     return (
-      <ThemedView key={schedule.id} style={styles.scheduleItem}>
+      <TouchableOpacity
+        key={schedule.id}
+        style={styles.scheduleItem}
+        onPress={() => {}}
+      >
         <ThemedText type="subtitle">
           {course?.courseCode} - {course?.courseTitle}
         </ThemedText>
@@ -85,7 +90,7 @@ export default function StudentScheduleScreen() {
           {schedule.startTime} - {schedule.endTime}
         </ThemedText>
         <ThemedText>Venue: {schedule.venue}</ThemedText>
-      </ThemedView>
+      </TouchableOpacity>
     );
   };
 
@@ -120,7 +125,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: "#27374D",
   },
   scrollView: {
     flex: 1,
@@ -145,7 +149,7 @@ const styles = StyleSheet.create({
     padding: 12,
     borderRadius: 8,
     marginBottom: 8,
-    backgroundColor: "#526D82",
+    backgroundColor: Colors.dark.card,
     elevation: 3,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },

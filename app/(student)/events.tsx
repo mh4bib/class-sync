@@ -5,6 +5,8 @@ import { ThemedText } from "@/components/ThemedText";
 import { Event } from "@/types/event";
 import { eventService } from "@/services/event.service";
 import { useAuth } from "@/context/AuthContext";
+import { format } from "date-fns";
+import { Colors } from "@/constants/Colors";
 
 interface GroupedEvents {
   [key: string]: Event[];
@@ -63,14 +65,24 @@ export default function StudentEventsScreen() {
   return (
     <ThemedView style={styles.container}>
       <ScrollView style={styles.scrollView}>
-        {Object.keys(groupedEvents)
-          .sort()
-          .map((date) => (
+        {Object.entries(groupedEvents)
+          .sort(
+            ([dateA], [dateB]) =>
+              new Date(dateA).getTime() - new Date(dateB).getTime()
+          )
+          .map(([date, dateEvents]) => (
             <ThemedView key={date} style={styles.dateContainer}>
               <ThemedText type="title" style={styles.dateHeader}>
-                {new Date(date).toLocaleDateString()}
+                {format(new Date(date), "MMMM d, yyyy")}
               </ThemedText>
-              {groupedEvents[date].map(renderEventItem)}
+              {dateEvents.map((event) => (
+                <ThemedView key={event.id} style={styles.eventItem}>
+                  <ThemedText type="subtitle">{event.title}</ThemedText>
+                  <ThemedText>{event.description}</ThemedText>
+                  <ThemedText>Course: {event.course}</ThemedText>
+                  <ThemedText>Type: {event.type}</ThemedText>
+                </ThemedView>
+              ))}
             </ThemedView>
           ))}
       </ScrollView>
@@ -82,7 +94,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: "#27374D",
   },
   scrollView: {
     flex: 1,
@@ -94,13 +105,12 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     marginBottom: 10,
-    color: "#DDE6ED",
   },
   eventItem: {
     padding: 12,
     borderRadius: 8,
     marginBottom: 8,
-    backgroundColor: "#526D82",
+    backgroundColor: Colors.dark.card,
     elevation: 3,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },

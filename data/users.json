@@ -23,7 +23,7 @@
       "role": "student",
       "studentId": "CE21005",
       "name": "John Doe",
-      "session": "2020-2021",
+      "studentSession": "2020-2021",
       "isSuspended": false
     },
     {
