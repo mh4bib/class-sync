@@ -26,6 +26,10 @@ export const Colors = {
     tabIconSelected: tintColorDark,
     card: "#395B64",
     fabIcon: "#395B64",
+    gray: "#808080",
+    dangerColor: "#ff0000",
+    successColor: "#355F2E",
+    warningColor: "#FA812F",
   },
 };
 

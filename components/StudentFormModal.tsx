@@ -10,6 +10,7 @@ import {
 import { ThemedText } from "./ThemedText";
 import { ThemedView } from "./ThemedView";
 import { User } from "@/types/auth";
+import { Colors } from "@/constants/Colors";
 
 interface Props {
   visible: boolean;
@@ -39,7 +40,14 @@ export function StudentFormModal({
     if (user) {
       setFormData(user);
     } else {
-      setFormData({ email: "", role: "student", isSuspended: false, studentId: "", studentName: "", studentSession: "" });
+      setFormData({
+        email: "",
+        role: "student",
+        isSuspended: false,
+        studentId: "",
+        studentName: "",
+        studentSession: "",
+      });
     }
   }, [user]);
 
@@ -67,6 +75,7 @@ export function StudentFormModal({
               setFormData((prev) => ({ ...prev, email: text }))
             }
             autoCapitalize="none"
+            placeholderTextColor={Colors.dark.textSecondary}
           />
           <TextInput
             style={styles.input}
@@ -76,6 +85,7 @@ export function StudentFormModal({
               setFormData((prev) => ({ ...prev, studentId: text }))
             }
             autoCapitalize="none"
+            placeholderTextColor={Colors.dark.textSecondary}
           />
           <TextInput
             style={styles.input}
@@ -84,6 +94,7 @@ export function StudentFormModal({
             onChangeText={(text) =>
               setFormData((prev) => ({ ...prev, studentName: text }))
             }
+            placeholderTextColor={Colors.dark.textSecondary}
           />
           <TextInput
             style={styles.input}
@@ -92,29 +103,10 @@ export function StudentFormModal({
             onChangeText={(text) =>
               setFormData((prev) => ({ ...prev, studentSession: text }))
             }
+            placeholderTextColor={Colors.dark.textSecondary}
           />
 
-          {user && (
-            <TouchableOpacity
-              style={styles.suspendButton}
-              onPress={() =>
-                setFormData((prev) => ({
-                  ...prev,
-                  isSuspended: !prev.isSuspended,
-                }))
-              }
-            >
-              <ThemedText style={styles.buttonText}>
-                {formData.isSuspended ? "Unsuspend Student" : "Suspend Student"}
-              </ThemedText>
-            </TouchableOpacity>
-          )}
-
           <View style={styles.buttons}>
-            <TouchableOpacity style={styles.cancelButton} onPress={onClose}>
-              <ThemedText style={styles.buttonText}>Cancel</ThemedText>
-            </TouchableOpacity>
-
             <TouchableOpacity
               style={styles.submitButton}
               onPress={handleSubmit}
@@ -123,13 +115,35 @@ export function StudentFormModal({
                 {user ? "Save" : "Create"}
               </ThemedText>
             </TouchableOpacity>
-          </View>
 
-          {user && onDelete && (
-            <TouchableOpacity style={styles.deleteButton} onPress={onDelete}>
-              <ThemedText style={styles.buttonText}>Delete Student</ThemedText>
+            {user && (
+              <TouchableOpacity
+                style={styles.suspendButton}
+                onPress={() =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    isSuspended: !prev.isSuspended,
+                  }))
+                }
+              >
+                <ThemedText style={styles.buttonText}>
+                  {formData.isSuspended ? "Unsuspend" : "Suspend"}
+                </ThemedText>
+              </TouchableOpacity>
+            )}
+            {/* </View>
+
+          <View style={styles.buttons}> */}
+            {user && onDelete && (
+              <TouchableOpacity style={styles.deleteButton} onPress={onDelete}>
+                <ThemedText style={styles.buttonText}>Delete</ThemedText>
+              </TouchableOpacity>
+            )}
+
+            <TouchableOpacity style={styles.cancelButton} onPress={onClose}>
+              <ThemedText style={styles.buttonText}>Cancel</ThemedText>
             </TouchableOpacity>
-          )}
+          </View>
         </ThemedView>
       </View>
     </Modal>
@@ -155,43 +169,50 @@ const styles = StyleSheet.create({
   input: {
     height: 50,
     borderWidth: 1,
-    borderColor: "#ddd",
+    borderColor: Colors.dark.text,
     borderRadius: 8,
     marginBottom: 16,
     paddingHorizontal: 16,
-    backgroundColor: "#fff",
+    color: Colors.dark.text,
   },
   buttons: {
+    display: "flex",
     flexDirection: "row",
-    gap: 12,
-    marginBottom: 16,
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    marginBottom: 10,
   },
   cancelButton: {
-    flex: 1,
-    backgroundColor: "#ddd",
-    padding: 16,
+    backgroundColor: Colors.dark.gray,
+    padding: 12,
+    width: "48%",
     borderRadius: 8,
     alignItems: "center",
+    marginVertical: 5,
   },
   submitButton: {
-    flex: 1,
-    backgroundColor: "#007AFF",
-    padding: 16,
+    backgroundColor: Colors.dark.card,
+    padding: 12,
     borderRadius: 8,
+    width: "48%",
     alignItems: "center",
+    marginVertical: 5,
   },
   suspendButton: {
-    backgroundColor: "#FF9500",
-    padding: 16,
+    backgroundColor: Colors.dark.warningColor,
+    padding: 12,
     borderRadius: 8,
+    width: "48%",
     alignItems: "center",
-    marginBottom: 16,
+    marginVertical: 5,
   },
   deleteButton: {
-    backgroundColor: "#FF3B30",
-    padding: 16,
+    backgroundColor: Colors.dark.dangerColor,
+    padding: 12,
     borderRadius: 8,
+    width: "48%",
     alignItems: "center",
+    marginVertical: 5,
   },
   buttonText: {
     color: "#fff",

@@ -10,6 +10,7 @@ import {
 import { ThemedText } from "./ThemedText";
 import { ThemedView } from "./ThemedView";
 import { User } from "@/types/auth";
+import { Colors } from "@/constants/Colors";
 
 interface Props {
   visible: boolean;
@@ -64,29 +65,10 @@ export function TeacherFormModal({
               setFormData((prev) => ({ ...prev, email: text }))
             }
             autoCapitalize="none"
+            placeholderTextColor={Colors.dark.textSecondary}
           />
 
-          {user && (
-            <TouchableOpacity
-              style={styles.suspendButton}
-              onPress={() =>
-                setFormData((prev) => ({
-                  ...prev,
-                  isSuspended: !prev.isSuspended,
-                }))
-              }
-            >
-              <ThemedText style={styles.buttonText}>
-                {formData.isSuspended ? "Unsuspend Teacher" : "Suspend Teacher"}
-              </ThemedText>
-            </TouchableOpacity>
-          )}
-
           <View style={styles.buttons}>
-            <TouchableOpacity style={styles.cancelButton} onPress={onClose}>
-              <ThemedText style={styles.buttonText}>Cancel</ThemedText>
-            </TouchableOpacity>
-
             <TouchableOpacity
               style={styles.submitButton}
               onPress={handleSubmit}
@@ -95,13 +77,33 @@ export function TeacherFormModal({
                 {user ? "Save" : "Create"}
               </ThemedText>
             </TouchableOpacity>
-          </View>
 
-          {user && onDelete && (
-            <TouchableOpacity style={styles.deleteButton} onPress={onDelete}>
-              <ThemedText style={styles.buttonText}>Delete Teacher</ThemedText>
+            {user && (
+              <TouchableOpacity
+                style={styles.suspendButton}
+                onPress={() =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    isSuspended: !prev.isSuspended,
+                  }))
+                }
+              >
+                <ThemedText style={styles.buttonText}>
+                  {formData.isSuspended ? "Unsuspend" : "Suspend"}
+                </ThemedText>
+              </TouchableOpacity>
+            )}
+
+            {user && onDelete && (
+              <TouchableOpacity style={styles.deleteButton} onPress={onDelete}>
+                <ThemedText style={styles.buttonText}>Delete</ThemedText>
+              </TouchableOpacity>
+            )}
+
+            <TouchableOpacity style={styles.cancelButton} onPress={onClose}>
+              <ThemedText style={styles.buttonText}>Cancel</ThemedText>
             </TouchableOpacity>
-          )}
+          </View>
         </ThemedView>
       </View>
     </Modal>
@@ -111,67 +113,66 @@ export function TeacherFormModal({
 const styles = StyleSheet.create({
   overlay: {
     flex: 1,
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    backgroundColor: "rgba(0,0,0,0.5)",
     justifyContent: "center",
     alignItems: "center",
   },
   container: {
     width: "90%",
-    backgroundColor: "#fff",
-    borderRadius: 8,
+    borderRadius: 12,
     padding: 20,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
   },
   title: {
-    fontSize: 20,
-    fontWeight: "bold",
+    textAlign: "center",
     marginBottom: 20,
   },
   input: {
+    height: 50,
     borderWidth: 1,
-    borderColor: "#ddd",
+    borderColor: Colors.dark.text,
     borderRadius: 8,
-    padding: 12,
     marginBottom: 16,
-  },
-  suspendButton: {
-    backgroundColor: "#FF9500",
-    padding: 12,
-    borderRadius: 8,
-    alignItems: "center",
-    marginBottom: 16,
+    paddingHorizontal: 16,
+    color: Colors.dark.text,
   },
   buttons: {
+    display: "flex",
     flexDirection: "row",
+    flexWrap: "wrap",
     justifyContent: "space-between",
-    marginTop: 16,
+    marginBottom: 10,
   },
   cancelButton: {
-    backgroundColor: "#ddd",
+    backgroundColor: Colors.dark.gray,
     padding: 12,
+    width: "48%",
     borderRadius: 8,
     alignItems: "center",
-    flex: 1,
-    marginRight: 8,
+    marginVertical: 5,
   },
   submitButton: {
-    backgroundColor: "#007AFF",
+    backgroundColor: Colors.dark.card,
     padding: 12,
     borderRadius: 8,
+    width: "48%",
     alignItems: "center",
-    flex: 1,
-    marginLeft: 8,
+    marginVertical: 5,
+  },
+  suspendButton: {
+    backgroundColor: Colors.dark.warningColor,
+    padding: 12,
+    borderRadius: 8,
+    width: "48%",
+    alignItems: "center",
+    marginVertical: 5,
   },
   deleteButton: {
-    backgroundColor: "#FF3B30",
+    backgroundColor: Colors.dark.dangerColor,
     padding: 12,
     borderRadius: 8,
+    width: "48%",
     alignItems: "center",
-    marginTop: 16,
+    marginVertical: 5,
   },
   buttonText: {
     color: "#fff",
