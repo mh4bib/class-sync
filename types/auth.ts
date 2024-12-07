@@ -9,7 +9,7 @@ export interface User {
   role: "admin" | "teacher" | "student";
   isSuspended: boolean;
   studentId?: string;
-  studentName?: string;
+  name?: string;
   studentSession?: string;
 }
 

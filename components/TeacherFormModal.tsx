@@ -59,6 +59,17 @@ export function TeacherFormModal({
 
           <TextInput
             style={styles.input}
+            placeholder="Name"
+            value={formData.name}
+            onChangeText={(text) =>
+              setFormData((prev) => ({ ...prev, name: text }))
+            }
+            autoCapitalize="none"
+            placeholderTextColor={Colors.dark.textSecondary}
+          />
+
+          <TextInput
+            style={styles.input}
             placeholder="Email"
             value={formData.email}
             onChangeText={(text) =>

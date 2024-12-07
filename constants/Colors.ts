@@ -30,6 +30,7 @@ export const Colors = {
     dangerColor: "#ff0000",
     successColor: "#355F2E",
     warningColor: "#FA812F",
+    black: "#000",
   },
 };
 

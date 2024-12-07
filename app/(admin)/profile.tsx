@@ -9,7 +9,7 @@ import { Colors } from "@/constants/Colors";
 export default function ProfileScreen() {
   const { user, logout } = useAuth();
   const [formData, setFormData] = useState({
-    name: user?.email.split("@")[0] || "",
+    name: user?.name || "",
     oldPassword: "",
     newPassword: "",
   });

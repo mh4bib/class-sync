@@ -13,7 +13,7 @@ interface Attendance {
 
 export interface GroupedAttendance {
   studentId: number;
-  studentName: string;
+  name: string;
   attendanceRecords: Attendance[];
   totalPresent: number;
   totalClasses: number;
@@ -71,40 +71,50 @@ class AttendanceService {
     }
   }
 
-  async getGroupedAttendanceByCourse(courseId: number): Promise<GroupedAttendance[]> {
+  async getGroupedAttendanceByCourse(
+    courseId: number
+  ): Promise<GroupedAttendance[]> {
     const attendances = await this.getAllAttendanceByCourse(courseId);
-    
+
     // Group by studentId
-    const groupedByStudent = attendances.reduce((acc: { [key: number]: Attendance[] }, curr) => {
-      if (!acc[curr.studentId]) {
-        acc[curr.studentId] = [];
-      }
-      acc[curr.studentId].push(curr);
-      return acc;
-    }, {});
+    const groupedByStudent = attendances.reduce(
+      (acc: { [key: number]: Attendance[] }, curr) => {
+        if (!acc[curr.studentId]) {
+          acc[curr.studentId] = [];
+        }
+        acc[curr.studentId].push(curr);
+        return acc;
+      },
+      {}
+    );
 
     // Transform to final format
     return Object.entries(groupedByStudent).map(([studentId, records]) => ({
       studentId: parseInt(studentId),
-      studentName: "Student " + studentId, // You'll need to get actual student names from your data
+      name: "Student " + studentId, // You'll need to get actual student names from your data
       attendanceRecords: records,
-      totalPresent: records.filter(r => r.isPresent).length,
-      totalClasses: records.length
+      totalPresent: records.filter((r) => r.isPresent).length,
+      totalClasses: records.length,
     }));
   }
 
-  async getStudentsForCourse(courseId: number, session: string): Promise<Student[]> {
+  async getStudentsForCourse(
+    courseId: number,
+    session: string
+  ): Promise<Student[]> {
     // In a real app, this would be an API call
     // For now, we'll filter students from users.json based on session
     await new Promise((resolve) => setTimeout(resolve, 500));
-    
+
     return userData.users
-      .filter(user => user.role === 'student' && user.studentSession === session)
-      .map(user => ({
+      .filter(
+        (user) => user.role === "student" && user.studentSession === session
+      )
+      .map((user) => ({
         id: user.id,
         studentId: user.studentId,
-        studentName: user.studentName,
-        session: user.studentSession
+        name: user.name,
+        session: user.studentSession,
       }));
   }
 

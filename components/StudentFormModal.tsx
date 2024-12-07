@@ -32,7 +32,7 @@ export function StudentFormModal({
     role: "student",
     isSuspended: false,
     studentId: "",
-    studentName: "",
+    name: "",
     studentSession: "",
   });
 
@@ -45,7 +45,7 @@ export function StudentFormModal({
         role: "student",
         isSuspended: false,
         studentId: "",
-        studentName: "",
+        name: "",
         studentSession: "",
       });
     }
@@ -90,9 +90,9 @@ export function StudentFormModal({
           <TextInput
             style={styles.input}
             placeholder="Student Name"
-            value={formData.studentName}
+            value={formData.name}
             onChangeText={(text) =>
-              setFormData((prev) => ({ ...prev, studentName: text }))
+              setFormData((prev) => ({ ...prev, name: text }))
             }
             placeholderTextColor={Colors.dark.textSecondary}
           />

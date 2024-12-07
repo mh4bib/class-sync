@@ -57,7 +57,7 @@ export default function ViewAttendanceScreen() {
           {/* Data Rows */}
           {attendanceData.map((student) => (
             <ThemedView key={student.studentId} style={styles.row}>
-              <ThemedText style={styles.cell}>{student.studentName}</ThemedText>
+              <ThemedText style={styles.cell}>{student.name}</ThemedText>
               <ThemedText style={styles.cell}>
                 {student.totalPresent}
               </ThemedText>

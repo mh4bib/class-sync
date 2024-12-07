@@ -35,7 +35,7 @@ export function ForumCard({ post, onVoteChange }: ForumCardProps) {
 
     await forumService.addComment(post.id, {
       content: comment,
-      author: user.studentName || user.email,
+      author: user.name || user.email,
       date: new Date().toISOString(),
       userId: Number(user.id),
     });

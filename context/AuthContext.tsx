@@ -9,7 +9,11 @@ interface AuthContextType {
   loading: boolean;
   login: (credentials: LoginCredentials) => Promise<LoginResponse>;
   logout: () => Promise<void>;
-  updateProfile: (data: { name?: string; oldPassword?: string; newPassword?: string }) => Promise<void>;
+  updateProfile: (data: {
+    name?: string;
+    oldPassword?: string;
+    newPassword?: string;
+  }) => Promise<void>;
 }
 
 export const AuthContext = createContext<AuthContextType | undefined>(
@@ -63,10 +67,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  const updateProfile = async (data: { name?: string; oldPassword?: string; newPassword?: string }) => {
+  const updateProfile = async (data: {
+    name?: string;
+    oldPassword?: string;
+    newPassword?: string;
+  }) => {
     try {
       // TODO: Implement API call to update profile
-      const updatedUser = { ...user, name: data.name };
+      const updatedUser = { ...user, name: data.name } as User;
       await AsyncStorage.setItem("user", JSON.stringify(updatedUser));
       setUser(updatedUser);
     } catch (error) {

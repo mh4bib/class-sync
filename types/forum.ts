@@ -4,7 +4,7 @@ export interface User {
   role: string;
   isSuspended: boolean;
   studentId?: string;
-  studentName?: string;
+  name?: string;
   studentSession?: string;
 }
 

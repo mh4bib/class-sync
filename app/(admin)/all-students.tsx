@@ -57,7 +57,7 @@ export default function AllStudentsScreen() {
         role: "student",
         isSuspended: false,
         studentId: userData.studentId,
-        studentName: userData.studentName,
+        name: userData.name,
         studentSession: userData.studentSession,
       });
       setStudents((prev) => [...prev, newStudent]);
@@ -73,7 +73,7 @@ export default function AllStudentsScreen() {
       const updatedStudent = await userService.updateUser({
         ...userData,
         studentId: userData.studentId,
-        studentName: userData.studentName,
+        name: userData.name,
         studentSession: userData.studentSession,
       });
       setStudents((prev) =>
