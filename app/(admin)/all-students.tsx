@@ -8,6 +8,7 @@ import { userService } from "@/services/user.service";
 import { User } from "@/types/auth";
 import { StudentFormModal } from "@/components/StudentFormModal";
 import { IconSymbol } from "@/components/ui/IconSymbol";
+import { Colors } from "@/constants/Colors";
 
 export default function AllStudentsScreen() {
   const [students, setStudents] = useState<User[]>([]);
@@ -154,7 +155,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 20,
     bottom: 20,
-    backgroundColor: "#526D82",
+    backgroundColor: Colors.dark.fabIcon,
     width: 56,
     height: 56,
     borderRadius: 28,
@@ -162,8 +163,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     elevation: 4,
     shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
+    shadowOffset: { width: 0, height: 10 },
+    shadowOpacity: 0.5,
+    shadowRadius: 10,
   },
 });

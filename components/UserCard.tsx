@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
     marginVertical: 8,
     borderRadius: 12,
-    backgroundColor: '#526D82',
+    backgroundColor: "#395B64",
     elevation: 3,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
@@ -65,6 +65,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   text: {
-    color: '#DDE6ED',
+    color: "#DDE6ED",
   },
 });

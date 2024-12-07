@@ -8,6 +8,7 @@ import { Schedule } from "@/types/schedule";
 import { scheduleService } from "@/services/schedule.service";
 import { ScheduleFormModal } from "@/components/ScheduleFormModal";
 import { NewScheduleFormModal } from "@/components/NewScheduleFormModal";
+import { Colors } from "@/constants/Colors";
 
 interface GroupedSchedules {
   [key: string]: {
@@ -90,19 +91,19 @@ export default function ScheduleScreen() {
   const handleUpdateSchedule = async (updatedSchedule: Schedule) => {
     try {
       const result = await scheduleService.updateSchedule(updatedSchedule);
-      
+
       // Update local state
       setSchedules((prev) =>
-        prev.map((schedule) =>
+        prev.map((schedule) => (schedule.id === result.id ? result : schedule))
+      );
+
+      // Regroup schedules
+      groupSchedules(
+        schedules.map((schedule) =>
           schedule.id === result.id ? result : schedule
         )
       );
-      
-      // Regroup schedules
-      groupSchedules(schedules.map((schedule) =>
-        schedule.id === result.id ? result : schedule
-      ));
-      
+
       handleCloseModal();
     } catch (error) {
       console.error("Error updating schedule:", error);
@@ -199,7 +200,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#27374D',
   },
   scrollView: {
     flex: 1,
@@ -224,7 +224,7 @@ const styles = StyleSheet.create({
     padding: 12,
     borderRadius: 8,
     marginBottom: 8,
-    backgroundColor: '#526D82',
+    backgroundColor: Colors.dark.card,
     elevation: 3,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
@@ -232,17 +232,17 @@ const styles = StyleSheet.create({
     shadowRadius: 3,
   },
   fab: {
-    position: 'absolute',
+    position: "absolute",
     right: 20,
     bottom: 20,
-    backgroundColor: '#007AFF',
+    backgroundColor: Colors.dark.fabIcon,
     width: 56,
     height: 56,
     borderRadius: 28,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     elevation: 4,
-    shadowColor: '#000',
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 4,

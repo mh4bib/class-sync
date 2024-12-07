@@ -6,8 +6,6 @@ import { IconSymbol } from "@/components/ui/IconSymbol";
 import TabBarBackground from "@/components/ui/TabBarBackground";
 import { Colors } from "@/constants/Colors";
 import { useColorScheme } from "@/hooks/useColorScheme";
-import { useEffect } from "react";
-import { useAuth } from "@/context/AuthContext";
 
 export default function AdminTabLayout() {
   const colorScheme = useColorScheme();

@@ -7,6 +7,7 @@ import { userService } from "@/services/user.service";
 import { User } from "@/types/auth";
 import { TeacherFormModal } from "@/components/TeacherFormModal";
 import { IconSymbol } from "@/components/ui/IconSymbol";
+import { Colors } from "@/constants/Colors";
 
 export default function AllTeachersScreen() {
   const [teachers, setTeachers] = useState<User[]>([]);
@@ -134,7 +135,6 @@ export default function AllTeachersScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#27374D',
   },
   list: {
     paddingVertical: 16,
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 20,
     bottom: 20,
-    backgroundColor: "#526D82",
+    backgroundColor: Colors.dark.fabIcon,
     width: 56,
     height: 56,
     borderRadius: 28,
