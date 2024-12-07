@@ -21,7 +21,12 @@ interface Props {
   schedule: Schedule | null;
 }
 
-export function ScheduleFormModal({ visible, onClose, onSubmit, schedule }: Props) {
+export function ScheduleFormModal({
+  visible,
+  onClose,
+  onSubmit,
+  schedule,
+}: Props) {
   const [formData, setFormData] = useState<Partial<Schedule>>({});
   const [showStartTime, setShowStartTime] = useState(false);
   const [showEndTime, setShowEndTime] = useState(false);
@@ -32,24 +37,25 @@ export function ScheduleFormModal({ visible, onClose, onSubmit, schedule }: Prop
     }
   }, [schedule]);
 
-  const handleTimeChange = (isStart: boolean) => (event: any, selectedTime?: Date) => {
-    if (Platform.OS === "android") {
-      isStart ? setShowStartTime(false) : setShowEndTime(false);
-    }
+  const handleTimeChange =
+    (isStart: boolean) => (event: any, selectedTime?: Date) => {
+      if (Platform.OS === "android") {
+        isStart ? setShowStartTime(false) : setShowEndTime(false);
+      }
 
-    if (selectedTime) {
-      const timeString = selectedTime.toLocaleTimeString("en-US", {
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: false,
-      });
+      if (selectedTime) {
+        const timeString = selectedTime.toLocaleTimeString("en-US", {
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: false,
+        });
 
-      setFormData((prev) => ({
-        ...prev,
-        [isStart ? "startTime" : "endTime"]: timeString,
-      }));
-    }
-  };
+        setFormData((prev) => ({
+          ...prev,
+          [isStart ? "startTime" : "endTime"]: timeString,
+        }));
+      }
+    };
 
   const handleSubmit = () => {
     if (formData && schedule) {
@@ -106,7 +112,10 @@ export function ScheduleFormModal({ visible, onClose, onSubmit, schedule }: Prop
             <TouchableOpacity style={styles.cancelButton} onPress={onClose}>
               <ThemedText style={styles.buttonText}>Cancel</ThemedText>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.submitButton} onPress={handleSubmit}>
+            <TouchableOpacity
+              style={styles.submitButton}
+              onPress={handleSubmit}
+            >
               <ThemedText style={styles.buttonText}>Save</ThemedText>
             </TouchableOpacity>
           </View>

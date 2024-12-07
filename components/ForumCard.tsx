@@ -9,6 +9,8 @@ import { useAuth } from "@/context/AuthContext";
 import { ThemedTextInput } from "./ThemedTextInput";
 import { CommentCard } from "./CommentCard";
 import { Avatar } from "./Avatar";
+import { Colors } from "@/constants/Colors";
+import { IconButton } from "./ui/IconButton";
 
 interface ForumCardProps {
   post: ForumPost;
@@ -46,56 +48,78 @@ export function ForumCard({ post, onVoteChange }: ForumCardProps) {
 
   return (
     <ThemedView style={styles.card}>
-      <View style={styles.header}>
-        <Avatar
-          size={50}
-          source={require("@/assets/images/default-avatar.png")}
-        />
-        <View style={styles.headerText}>
-          <ThemedText type="title" style={styles.title}>
-            {post.title}
-          </ThemedText>
-          <ThemedText style={{ color: "#808080" }}>
-            {post.author}{" "}
-            {post.user?.studentId ? `(${post.user.studentId})` : ""} •{" "}
-            {new Date(post.date).toLocaleDateString()}
-          </ThemedText>
+      <View
+        style={{
+          backgroundColor: Colors.dark.card,
+          padding: 10,
+          borderRadius: 10,
+        }}
+      >
+        <View style={{ ...styles.header }}>
+          <Avatar
+            size={50}
+            source={require("@/assets/images/default-avatar.png")}
+          />
+          <View style={styles.headerText}>
+            <ThemedText type="title" style={{ ...styles.title }}>
+              {post.title}
+            </ThemedText>
+            <ThemedText style={{ color: Colors.dark.gray }}>
+              {post.author}{" "}
+              {post.user?.studentId ? `(${post.user.studentId})` : ""} •{" "}
+              {new Date(post.date).toLocaleDateString()}
+            </ThemedText>
+          </View>
         </View>
-      </View>
 
-      <ThemedText style={styles.content}>{post.content}</ThemedText>
+        <ThemedText style={styles.content}>{post.content}</ThemedText>
 
-      <View style={styles.actions}>
-        <Pressable onPress={handleUpvote} style={styles.voteButton}>
-          <IconSymbol name="arrow.up" size={20} color="#fff" />
-          <ThemedText>{post.upVotes}</ThemedText>
-        </Pressable>
+        <View style={styles.actions}>
+          <Pressable onPress={handleUpvote} style={styles.voteButton}>
+            <IconSymbol name="arrow.up" size={20} color="#fff" />
+            <ThemedText>{post.upVotes}</ThemedText>
+          </Pressable>
 
-        <Pressable onPress={handleDownvote} style={styles.voteButton}>
-          <IconSymbol name="arrow.down" size={20} color="#fff" />
-          <ThemedText>{post.downVotes}</ThemedText>
-        </Pressable>
+          <Pressable onPress={handleDownvote} style={styles.voteButton}>
+            <IconSymbol name="arrow.down" size={20} color="#fff" />
+            <ThemedText>{post.downVotes}</ThemedText>
+          </Pressable>
 
-        <Pressable
-          onPress={() => setShowCommentInput(!showCommentInput)}
-          style={styles.commentButton}
-        >
-          <IconSymbol name="bubble.left" size={20} color="#fff" />
-          <ThemedText style={{ marginBottom: 5, marginLeft: 2 }}>
-            Answer this post
-          </ThemedText>
-        </Pressable>
+          <Pressable
+            onPress={() => setShowCommentInput(!showCommentInput)}
+            style={styles.commentButton}
+          >
+            <IconSymbol name="bubble.left" size={20} color="#fff" />
+            <ThemedText style={{ marginLeft: 2 }}>Answer this post</ThemedText>
+          </Pressable>
+        </View>
       </View>
 
       {showCommentInput && (
         <View style={styles.commentInput}>
           <TextInput
             value={comment}
+            style={{
+              color: Colors.dark.text,
+              borderColor: Colors.dark.text,
+              borderWidth: 1,
+              padding: 10,
+              height: 60,
+              textAlignVertical: "top",
+              borderRadius: 10,
+            }}
+            placeholderTextColor={Colors.dark.textSecondary}
             onChangeText={setComment}
             placeholder="Write a comment..."
             multiline
           />
-          <Button onPress={handleAddComment} title="Submit" />
+          <IconButton
+            onPress={handleAddComment}
+            icon="send"
+            size={24}
+            color={Colors.dark.card}
+            style={styles.submitButton}
+          />
         </View>
       )}
 
@@ -110,7 +134,6 @@ export function ForumCard({ post, onVoteChange }: ForumCardProps) {
 
 const styles = StyleSheet.create({
   card: {
-    padding: 16,
     marginVertical: 8,
     marginHorizontal: 16,
     borderRadius: 12,
@@ -148,8 +171,15 @@ const styles = StyleSheet.create({
   commentInput: {
     marginTop: 12,
     gap: 8,
+    position: "relative",
+  },
+  submitButton: {
+    position: "absolute",
+    bottom: 10,
+    right: 10,
   },
   comments: {
     marginTop: 16,
+    marginLeft: 16,
   },
 });

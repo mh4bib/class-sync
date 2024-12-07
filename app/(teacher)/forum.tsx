@@ -1,11 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, FlatList, RefreshControl, TouchableOpacity, Modal, View, TextInput, Button } from "react-native";
+import {
+  StyleSheet,
+  FlatList,
+  RefreshControl,
+  TouchableOpacity,
+  Modal,
+  View,
+  TextInput,
+  Button,
+} from "react-native";
 import { ThemedView } from "@/components/ThemedView";
 import { ForumPost } from "@/types/forum";
 import { forumService } from "@/services/forum.service";
 import { ForumCard } from "@/components/ForumCard";
 import { ThemedText } from "@/components/ThemedText";
 import { IconSymbol } from "@/components/ui/IconSymbol";
+import { Colors } from "@/constants/Colors";
 
 export default function ForumScreen() {
   const [posts, setPosts] = useState<ForumPost[]>([]);
@@ -44,6 +54,7 @@ export default function ForumScreen() {
   return (
     <ThemedView style={styles.container}>
       <FlatList
+        style={{ marginTop: 20 }}
         data={posts}
         renderItem={({ item }) => (
           <ForumCard post={item} onVoteChange={loadPosts} />
@@ -62,22 +73,43 @@ export default function ForumScreen() {
       <Modal visible={isModalVisible} animationType="slide" transparent>
         <View style={styles.modalOverlay}>
           <ThemedView style={styles.modalContainer}>
-            <ThemedText type="title" style={styles.modalTitle}>Add New Post</ThemedText>
+            <ThemedText type="title" style={styles.modalTitle}>
+              Add New Post
+            </ThemedText>
             <TextInput
               style={styles.input}
               placeholder="Title"
               value={newPost.title}
-              onChangeText={(text) => setNewPost((prev) => ({ ...prev, title: text }))}
+              onChangeText={(text) =>
+                setNewPost((prev) => ({ ...prev, title: text }))
+              }
+              placeholderTextColor={Colors.dark.textSecondary}
             />
             <TextInput
-              style={styles.input}
+              style={{ ...styles.input, height: 100, textAlignVertical: "top" }}
               placeholder="Content"
               value={newPost.content}
-              onChangeText={(text) => setNewPost((prev) => ({ ...prev, content: text }))}
+              onChangeText={(text) =>
+                setNewPost((prev) => ({ ...prev, content: text }))
+              }
+              placeholderTextColor={Colors.dark.textSecondary}
               multiline
             />
-            <Button title="Submit" onPress={handleAddPost} />
-            <Button title="Cancel" onPress={() => setIsModalVisible(false)} />
+            <View style={styles.buttons}>
+              <TouchableOpacity
+                style={styles.submitButton}
+                onPress={handleAddPost}
+              >
+                <ThemedText style={styles.buttonText}>ADD POST</ThemedText>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                style={styles.cancelButton}
+                onPress={() => setIsModalVisible(false)}
+              >
+                <ThemedText style={styles.buttonText}>CANCEL</ThemedText>
+              </TouchableOpacity>
+            </View>
           </ThemedView>
         </View>
       </Modal>
@@ -93,7 +125,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 16,
     right: 16,
-    backgroundColor: "#6200ee",
+    backgroundColor: Colors.dark.fabIcon,
     width: 56,
     height: 56,
     borderRadius: 28,
@@ -112,14 +144,39 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   modalTitle: {
+    textAlign: "center",
     marginBottom: 20,
   },
   input: {
-    width: "100%",
-    padding: 10,
-    marginVertical: 10,
+    height: 50,
     borderWidth: 1,
-    borderColor: "#ccc",
-    borderRadius: 5,
+    borderColor: Colors.dark.text,
+    borderRadius: 8,
+    marginBottom: 16,
+    paddingHorizontal: 16,
+    color: Colors.dark.text,
+  },
+  buttons: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  cancelButton: {
+    backgroundColor: Colors.dark.gray,
+    padding: 10,
+    width: "48%",
+    borderRadius: 8,
+    alignItems: "center",
+  },
+  submitButton: {
+    backgroundColor: Colors.dark.card,
+    padding: 10,
+    borderRadius: 8,
+    width: "48%",
+    alignItems: "center",
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "bold",
   },
 });

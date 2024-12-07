@@ -13,6 +13,7 @@ import { Schedule } from "@/types/schedule";
 import { scheduleService } from "@/services/schedule.service";
 import { useAuth } from "@/context/AuthContext";
 import { router } from "expo-router";
+import { Colors } from "@/constants/Colors";
 
 interface GroupedSchedules {
   [key: string]: {
@@ -97,8 +98,8 @@ export default function TeacherScheduleScreen() {
         pathname: "/attendance-take",
         params: {
           courseId: selectedSchedule.course.id.toString(),
-          session: selectedSchedule.session
-        }
+          session: selectedSchedule.session,
+        },
       });
     }
   };
@@ -110,8 +111,8 @@ export default function TeacherScheduleScreen() {
         pathname: "/attendance-view",
         params: {
           courseId: selectedSchedule.course.id.toString(),
-          courseTitle: selectedSchedule.course.courseTitle
-        }
+          courseTitle: selectedSchedule.course.courseTitle,
+        },
       });
     }
   };
@@ -122,17 +123,16 @@ export default function TeacherScheduleScreen() {
     return (
       <TouchableOpacity
         key={schedule.id}
+        style={styles.scheduleItem}
         onPress={() => handleScheduleClick(schedule)}
       >
-        <ThemedView style={styles.scheduleItem}>
-          <ThemedText type="subtitle">
-            {course?.courseCode} - {course?.courseTitle}
-          </ThemedText>
-          <ThemedText>
-            {schedule.startTime} - {schedule.endTime}
-          </ThemedText>
-          <ThemedText>Venue: {schedule.venue}</ThemedText>
-        </ThemedView>
+        <ThemedText type="subtitle">
+          {course?.courseCode} - {course?.courseTitle}
+        </ThemedText>
+        <ThemedText>
+          {schedule.startTime} - {schedule.endTime}
+        </ThemedText>
+        <ThemedText>Venue: {schedule.venue}</ThemedText>
       </TouchableOpacity>
     );
   };
@@ -168,7 +168,10 @@ export default function TeacherScheduleScreen() {
               {selectedSchedule?.course.courseTitle}
             </ThemedText>
             <TouchableOpacity
-              style={styles.modalButton}
+              style={{
+                ...styles.modalButton,
+                backgroundColor: Colors.dark.card,
+              }}
               onPress={handleTakeAttendance}
             >
               <ThemedText style={styles.modalButtonText}>
@@ -176,7 +179,10 @@ export default function TeacherScheduleScreen() {
               </ThemedText>
             </TouchableOpacity>
             <TouchableOpacity
-              style={styles.modalButton}
+              style={{
+                ...styles.modalButton,
+                backgroundColor: Colors.dark.card,
+              }}
               onPress={handleViewAttendance}
             >
               <ThemedText style={styles.modalButtonText}>
@@ -184,7 +190,10 @@ export default function TeacherScheduleScreen() {
               </ThemedText>
             </TouchableOpacity>
             <TouchableOpacity
-              style={styles.modalButton}
+              style={{
+                ...styles.modalButton,
+                backgroundColor: Colors.dark.gray,
+              }}
               onPress={() => setIsModalVisible(false)}
             >
               <ThemedText style={styles.modalButtonText}>Close</ThemedText>
@@ -200,7 +209,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: "#27374D",
   },
   scrollView: {
     flex: 1,
@@ -225,7 +233,7 @@ const styles = StyleSheet.create({
     padding: 12,
     borderRadius: 8,
     marginBottom: 8,
-    backgroundColor: "#526D82",
+    backgroundColor: Colors.dark.card,
     elevation: 3,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
@@ -241,7 +249,7 @@ const styles = StyleSheet.create({
   modalContainer: {
     width: 300,
     padding: 20,
-    backgroundColor: "#fff",
+    backgroundColor: Colors.dark.background,
     borderRadius: 10,
     alignItems: "center",
   },
@@ -253,7 +261,6 @@ const styles = StyleSheet.create({
     width: "100%",
     padding: 10,
     marginVertical: 5,
-    backgroundColor: "#526D82",
     borderRadius: 5,
     alignItems: "center",
   },

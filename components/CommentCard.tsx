@@ -4,6 +4,7 @@ import { ThemedText } from "./ThemedText";
 import { ThemedView } from "./ThemedView";
 import { Comment } from "@/types/forum";
 import { Avatar } from "./Avatar";
+import { Colors } from "@/constants/Colors";
 
 interface CommentCardProps {
   comment: Comment;
@@ -35,6 +36,7 @@ const styles = StyleSheet.create({
     padding: 12,
     marginVertical: 4,
     borderRadius: 8,
+    backgroundColor: Colors.dark.card,
   },
   header: {
     flexDirection: "row",

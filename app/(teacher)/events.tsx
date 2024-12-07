@@ -10,6 +10,7 @@ import { Course } from "@/types/schedule";
 import { IconSymbol } from "@/components/ui/IconSymbol";
 import { EventFormModal } from "@/components/EventFormModal";
 import { format } from "date-fns";
+import { Colors } from "@/constants/Colors";
 
 interface GroupedEvents {
   [date: string]: Event[];
@@ -77,30 +78,6 @@ export default function EventsScreen() {
   useEffect(() => {
     loadData();
   }, []);
-
-  // const loadData = async () => {
-  //   try {
-  //     const [allEvents, allSchedules] = await Promise.all([
-  //       eventService.getEvents(),
-  //       scheduleService.getSchedules(),
-  //     ]);
-
-  //     // Get courses taught by teacher
-  //     const teacherSchedules = allSchedules.filter(
-  //       (schedule) => schedule.teacherId === user?.id
-  //     );
-  //     const courses = teacherSchedules.map((schedule) => schedule.course);
-  //     setTeacherCourses(courses);
-
-  //     // Filter events for teacher's courses
-  //     const teacherEvents = allEvents.filter((event) =>
-  //       courses.some((course) => course.courseCode === event.course)
-  //     );
-  //     setEvents(teacherEvents);
-  //   } catch (error) {
-  //     console.error("Error loading data:", error);
-  //   }
-  // };
 
   const handleAddEvent = () => {
     setSelectedEvent(null);
@@ -207,7 +184,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#27374D',
   },
   scrollView: {
     flex: 1,
@@ -216,7 +192,7 @@ const styles = StyleSheet.create({
     padding: 12,
     borderRadius: 8,
     marginBottom: 8,
-    backgroundColor: '#526D82',
+    backgroundColor: Colors.dark.card,
     elevation: 3,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
@@ -230,7 +206,7 @@ const styles = StyleSheet.create({
     width: 56,
     height: 56,
     borderRadius: 28,
-    backgroundColor: "#526D82",
+    backgroundColor: Colors.dark.fabIcon,
     justifyContent: "center",
     alignItems: "center",
     elevation: 4,
@@ -246,6 +222,5 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     marginBottom: 10,
-    color: '#DDE6ED',
   },
 });

@@ -20,6 +20,7 @@ const MAPPING = {
   "arrow.up": "arrow-upward",
   "arrow.down": "arrow-downward",
   "bubble.left": "chat-bubble",
+  send: "send",
 } as const;
 
 type IconSymbolName = keyof typeof MAPPING;
