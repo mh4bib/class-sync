@@ -2,22 +2,54 @@
   "schedules": [
     {
       "id": "1",
-      "courseId": "1111",
-      "teacherId": "6",
+      "courseId": "1101",
+      "teacherId": "2",
       "dayOfWeek": "Monday",
       "startTime": "08:30",
       "endTime": "10:00",
       "venue": "Room 301",
       "course": {
-        "id": 1111,
+        "id": 1101,
         "courseCode": "CSE1101",
-        "courseTitle": "Introduction to Computer Science",
+        "courseTitle": "Introduction to Programming",
         "creditHours": 3
       },
       "session": "2020-2021"
     },
     {
       "id": "2",
+      "courseId": "1102",
+      "teacherId": "2",
+      "dayOfWeek": "Monday",
+      "startTime": "10:30",
+      "endTime": "12:00",
+      "venue": "Lab 1",
+      "course": {
+        "id": 1102,
+        "courseCode": "CSE1102",
+        "courseTitle": "Data Structures",
+        "creditHours": 3
+      },
+      "session": "2020-2021"
+    },
+    {
+      "id": "3",
+      "courseId": "1104",
+      "teacherId": "2",
+      "dayOfWeek": "Monday",
+      "startTime": "14:00",
+      "endTime": "15:30",
+      "venue": "Room 302",
+      "course": {
+        "id": 1104,
+        "courseCode": "CSE1104",
+        "courseTitle": "Computer Organization",
+        "creditHours": 3
+      },
+      "session": "2020-2021"
+    },
+    {
+      "id": "4",
       "courseId": "1112",
       "teacherId": "7",
       "dayOfWeek": "Monday",
@@ -33,7 +65,7 @@
       "session": "2021-2022"
     },
     {
-      "id": "3",
+      "id": "5",
       "courseId": "1113",
       "teacherId": "8",
       "dayOfWeek": "Tuesday",
@@ -49,7 +81,7 @@
       "session": "2019-2020"
     },
     {
-      "id": "4",
+      "id": "6",
       "courseId": "1114",
       "teacherId": "9",
       "dayOfWeek": "Tuesday",
@@ -65,7 +97,7 @@
       "session": "2020-2021"
     },
     {
-      "id": "5",
+      "id": "7",
       "courseId": "1115",
       "teacherId": "6",
       "dayOfWeek": "Wednesday",
@@ -81,7 +113,7 @@
       "session": "2021-2022"
     },
     {
-      "id": "6",
+      "id": "8",
       "courseId": "1116",
       "teacherId": "7",
       "dayOfWeek": "Wednesday",
@@ -97,7 +129,7 @@
       "session": "2019-2020"
     },
     {
-      "id": "7",
+      "id": "9",
       "courseId": "1121",
       "teacherId": "8",
       "dayOfWeek": "Thursday",
@@ -113,7 +145,7 @@
       "session": "2020-2021"
     },
     {
-      "id": "8",
+      "id": "10",
       "courseId": "1122",
       "teacherId": "9",
       "dayOfWeek": "Thursday",
@@ -129,7 +161,7 @@
       "session": "2021-2022"
     },
     {
-      "id": "9",
+      "id": "11",
       "courseId": "2111",
       "teacherId": "6",
       "dayOfWeek": "Monday",
@@ -145,7 +177,7 @@
       "session": "2019-2020"
     },
     {
-      "id": "10",
+      "id": "12",
       "courseId": "2112",
       "teacherId": "7",
       "dayOfWeek": "Tuesday",
@@ -161,7 +193,7 @@
       "session": "2020-2021"
     },
     {
-      "id": "11",
+      "id": "13",
       "courseId": "3111",
       "teacherId": "8",
       "dayOfWeek": "Wednesday",
@@ -177,7 +209,7 @@
       "session": "2021-2022"
     },
     {
-      "id": "12",
+      "id": "14",
       "courseId": "3112",
       "teacherId": "9",
       "dayOfWeek": "Thursday",
@@ -193,7 +225,7 @@
       "session": "2019-2020"
     },
     {
-      "id": "13",
+      "id": "15",
       "courseId": "4124",
       "teacherId": "6",
       "dayOfWeek": "Friday",
@@ -209,7 +241,7 @@
       "session": "2020-2021"
     },
     {
-      "id": "14",
+      "id": "16",
       "courseId": "4121",
       "teacherId": "7",
       "dayOfWeek": "Friday",
@@ -223,6 +255,102 @@
         "creditHours": 3
       },
       "session": "2021-2022"
+    },
+    {
+      "id": "17",
+      "courseId": "1103",
+      "teacherId": "2",
+      "dayOfWeek": "Tuesday",
+      "startTime": "08:30",
+      "endTime": "10:00",
+      "venue": "Room 301",
+      "course": {
+        "id": 1103,
+        "courseCode": "CSE1103",
+        "courseTitle": "Algorithms",
+        "creditHours": 3
+      },
+      "session": "2020-2021"
+    },
+    {
+      "id": "18",
+      "courseId": "1105",
+      "teacherId": "2",
+      "dayOfWeek": "Tuesday",
+      "startTime": "10:30",
+      "endTime": "12:00",
+      "venue": "Room 302",
+      "course": {
+        "id": 1105,
+        "courseCode": "CSE1105",
+        "courseTitle": "Operating Systems",
+        "creditHours": 3
+      },
+      "session": "2020-2021"
+    },
+    {
+      "id": "19",
+      "courseId": "1106",
+      "teacherId": "2",
+      "dayOfWeek": "Wednesday",
+      "startTime": "08:30",
+      "endTime": "10:00",
+      "venue": "Lab 2",
+      "course": {
+        "id": 1106,
+        "courseCode": "CSE1106",
+        "courseTitle": "Database Systems",
+        "creditHours": 3
+      },
+      "session": "2020-2021"
+    },
+    {
+      "id": "20",
+      "courseId": "2101",
+      "teacherId": "2",
+      "dayOfWeek": "Wednesday",
+      "startTime": "10:30",
+      "endTime": "12:00",
+      "venue": "Room 303",
+      "course": {
+        "id": 2101,
+        "courseCode": "CSE2101",
+        "courseTitle": "Software Engineering",
+        "creditHours": 3
+      },
+      "session": "2020-2021"
+    },
+    {
+      "id": "21",
+      "courseId": "2102",
+      "teacherId": "2",
+      "dayOfWeek": "Thursday",
+      "startTime": "08:30",
+      "endTime": "10:00",
+      "venue": "Lab 1",
+      "course": {
+        "id": 2102,
+        "courseCode": "CSE2102",
+        "courseTitle": "Web Development",
+        "creditHours": 3
+      },
+      "session": "2020-2021"
+    },
+    {
+      "id": "22",
+      "courseId": "2103",
+      "teacherId": "2",
+      "dayOfWeek": "Friday",
+      "startTime": "08:30",
+      "endTime": "10:00",
+      "venue": "Room 304",
+      "course": {
+        "id": 2103,
+        "courseCode": "CSE2103",
+        "courseTitle": "Mobile App Development",
+        "creditHours": 3
+      },
+      "session": "2020-2021"
     }
   ]
 }

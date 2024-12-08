@@ -2,6 +2,46 @@
   "events": [
     {
       "id": "1",
+      "title": "Assignment 1: Data Structures",
+      "description": "Implementation of Binary Trees",
+      "date": "2024-01-15",
+      "course": "CSE1102",
+      "type": "Assignment"
+    },
+    {
+      "id": "2",
+      "title": "Mid-term Exam",
+      "description": "Covers chapters 1-5",
+      "date": "2024-01-15",
+      "course": "CSE1101",
+      "type": "Exam"
+    },
+    {
+      "id": "3",
+      "title": "Project Presentation",
+      "description": "Group project demonstrations",
+      "date": "2024-01-15",
+      "course": "CSE1104",
+      "type": "Presentation"
+    },
+    {
+      "id": "4",
+      "title": "Lab Report Due",
+      "description": "Submit lab experiment reports",
+      "date": "2024-01-20",
+      "course": "CSE1102",
+      "type": "Assignment"
+    },
+    {
+      "id": "5",
+      "title": "Quiz 2",
+      "description": "Topics: Sorting Algorithms",
+      "date": "2024-01-20",
+      "course": "CSE1102",
+      "type": "Quiz"
+    },
+    {
+      "id": "1",
       "title": "Event 1",
       "description": "Description 1",
       "date": "2021-12-01",
